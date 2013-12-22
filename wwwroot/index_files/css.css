@@ -1,0 +1,204 @@
+/*江西南博运动器材有限公司*/
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p,
+blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, textarea, /* form elements 表单元素 */
+th, td, /* table elements 表格元素 */
+img/* img elements 图片元素 */{
+border:medium none;
+margin: 0;
+padding: 0;
+}
+/** 设置默认字体 **/
+body,button, input, select, textarea {
+font: 12px/1.5 '宋体',tahoma, Srial, helvetica, sans-serif; color:#333; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+em{font-style:normal;}
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+/** 重置超链接元素 **/
+a { text-decoration: none; color:#333;}
+a:hover { text-decoration: underline; color:#333; }
+/** 重置图片元素 **/
+img{ border:0px;}
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+/** box **/
+.cbox{ width:960px; padding:0 12px; background:#FFF; overflow:hidden; margin:0 auto;}
+.cbox_b{ width:968px; margin:0 auto; border:1px solid #dedede;}
+/** 清除浮动**/
+.c{ clear:both; height:0; overflow:hidden;}
+.c_5{ clear:both; height:5px; overflow:hidden;}
+.c_10{ clear:both; height:10px; overflow:hidden;}
+.c_15{ clear:both; height:15px; overflow:hidden;}
+.c_20{ clear:both; height:20px;  overflow:hidden;}
+.c_25{ clear:both; height:25px; overflow:hidden;}
+/** 实线和虚线 **/
+.line_solid{ clear:both; height:1px; border-bottom:1px solid #aeaeae; overflow:hidden; margin:0; padding:0;}
+.line_dashed{ clear:both; height:1px; border-bottom:1px dashed #BCBCBC; overflow:hidden; margin:0 10px; padding:0;}
+/**body**/
+body{background:url(../images/body_bg.jpg) top repeat-x;}
+*html{_background-image:url(about:blank); _background-attachment:fixed; zoom:1;}
+/**top**/
+.top_banner{display:block; padding:10px 0 0 0;}
+.top{ overflow:hidden;}
+.logo{ display:block; width:387px; height:46px; float:left; margin:25px 0 0 25px;}
+.tips{display:block; width:298px; height:62px; float:right; margin-top:10px;}
+.nav{ height:37px; background:url(../images/nav_bg.png) no-repeat; padding-left:30px; position:relative;}
+.nav a{line-height:37px; font-size:14px; color:#FFF; font-weight:bold; display:block; width:90px; position:relative; z-index:2; height:35px; float:left; text-align:center; margin-right:10px;}
+.nav a:hover{color:#fff; text-decoration:none;}
+#nav_a_bg{ width:90px; height:35px; background:url(../images/nav_hover.png) no-repeat; position:absolute; top:0px; z-index:1;}
+/**banner**/
+.description{ width:288px; float:left;}
+.description h3{ height:30px; line-height:30px; position:relative;border-bottom:1px solid #f27804; z-index:0; margin-bottom:5px; font-size:14px;}
+.description h3 em{display:block; width:120px; position:absolute; border-bottom:4px solid #f27804; bottom:-2px; padding-left:16px; font-size:14px; z-index:999;}
+.description .content{line-height:24px; padding:12px;}
+.banner{ width:640px; height:284px; overflow:hidden; padding-bottom:15px; position:relative; float:right;}
+.swf_img{ width:640px; height:284px; overflow:hidden; }
+#swf_img li{ width:640px; height:284px; overflow:hidden;}
+#swf_img li img{ width:640px; height:284px; }
+#swf_btn{ position:absolute; bottom:20px; height:6px; z-index:999; right:20px; }
+#swf_btn a{width:32px; overflow:hidden; height:6px; background:#FFF; float:left; display:block; margin:0 5px;}
+#swf_btn .a_now{background:#c20300;}
+/**left**/
+.left{ width:700px; float:left;}
+.left h3{ height:30px; line-height:30px; position:relative;border-bottom:1px solid #f27804; z-index:0; margin-bottom:5px; font-size:14px;}
+.left h3 em{display:block; width:120px; position:absolute; border-bottom:4px solid #f27804; bottom:-2px; padding-left:16px; font-size:14px; z-index:999;}
+.left h3 .more{position:absolute; display:block; font-weight:normal; top:0; right:10px;font-size:12px; color:#666;}
+/**hot**/
+.hot h3{ height:30px; line-height:30px; position:relative;border-bottom:1px solid #f27804; z-index:0; margin-bottom:5px; font-size:14px;}
+.hot h3 em{display:block; width:120px; position:absolute; border-bottom:4px solid #f27804; bottom:-2px; padding-left:16px; font-size:14px; z-index:999;}
+.hot h3 .more{position:absolute; display:block; font-weight:normal; top:0; right:10px;font-size:12px; color:#666;}
+.list{
+height:auto; border:1px solid #e2e2e2; padding:18px; overflow:hidden; margin-bottom:7px;}                                              
+.list .item{
+         border:1px solid #e2e2e2;height:104px; width:265px;padding:10px;
+        margin:10px;
+        float:left;
+}
+.list .item .left{float:left;width:160px;}
+.list .item .right{float:right;width:105px;}
+.list .item .right h5{background:#fff;width:120px;}
+.list .item .right h5 a{color:#ccc;}
+.list .item .right span{}
+/*teacher*/
+.teacher{width:300px; border:1px solid #e2e2e2; height:104px; padding:10px; float:left;}
+.teacher .left{float:left;width:160px;}
+.teacher .right{float:right;width:105px;}
+.teacher .right h5{background:#fff;width:120px;} 
+.teacher .right h5 a{color:#ccc;}
+/*others*/
+.others{width:600px; border:1px solid #e2e2e2; height:104px; padding:10px; float:right;}
+#demo { background: #FFF; overflow:hidden;} 
+#demo a{ padding-right:10px; }
+#indemo { float: left; width: 800%; } 
+#demo1 { float: left; }
+#demo2 { float: left; } 
+
+.tzkc{ height:180px; border:1px solid #e2e2e2; padding:12px 0 0 22px; overflow:hidden; margin-bottom:7px;}
+.tzkc ul{ height:164px; overflow:hidden; width:10000px;}
+.tzkc ul li{width:149px; height:164px; float:left; overflow:hidden; margin-right:20px; }
+.tzkc ul li a{ display:block; width:149px; height:164px;}
+.tzkc ul li a img{ width:137px; height:112px; padding:5px; border:1px solid #d6d6d6;}
+.tzkc ul li a em{ display:block; height:40px; overflow:hidden; line-height:40px;  text-align:center;}
+.company{ height:250px;overflow:hidden;}
+.company_left{ width:288px; overflow:hidden; float:left;}
+.company_left h4{ height:30px; line-height:30px; background:url(../images/all.png) -274px -29px no-repeat; font-size:14px;border-bottom:none; position:relative;}
+.company_left h4 em{display:block; position:absolute; left:30px; font-size:14px; line-height:30px;}
+.company_left h4 .more{position:absolute; display:block; font-weight:normal; top:0; right:10px; font-size:12px; color:#666;}
+.company_left_box{ height:190px; border:1px solid #e4e4e4; padding:10px 12px; line-height:28px;}
+.company_left_box a{line-height:30px; height:30px; border-bottom:1px dashed #cbcbcb; display:block; float:left; width:67px;text-align:center; overflow:hidden;}
+.company_right{ width:400px; float:right;}
+.company_right_box { line-height:24px;}
+.company_right_box img{width:104px; height:79px; padding:2px; border:1px solid #e3e3e3; float:left; margin-right:20px;}
+.company_right_box a{display:inline; width:auto; float:none; border:none; color:#e35c00;}
+/**right**/
+.right{ width:251px; overflow:hidden; float:right;}
+.right h5{line-height:30px; background:url(../images/all.png) -3px -72px no-repeat; /*font-size:14px;*/}
+.right h5 em{color:#FFF; margin-left:10px; margin-right:140px;}
+.right h5 a{ font-size:12px; font-weight:normal;color:#FFF; }
+.right ul{border:1px solid #e5e5e5; background:url(../images/news_list_bg.jpg) top repeat-x; padding:7px 15px 22px 15px; border-top:none; border-bottom:none; overflow:hidden;}
+.img_news{height:182px; overflow:hidden;}
+.img_news li{ height:76px; display:block; overflow:hidden; margin-bottom:15px;}
+.img_news li .img_new{display:inline-block; float:left; width:85px; margin-right:15px;}
+.img_news li .img_new img{width:82px; height:70px; padding:2px; border:1px solid #d7d7d7;}
+.img_news li .new_title{ float:left; display:block; width:115px; line-height:20px; height:20px; overflow:hidden; color:#333;}
+.img_news li p{color:#666; line-height:25px;}
+.new_list{}
+.new_list li{line-height:25px; width:200px; height:25px;  background:url(../images/all.png) -289px 3px no-repeat; padding-left:15px; overflow:hidden; display:block;}
+/**友情链接**/
+.link{ line-height:50px; padding:0 10px;}
+.link a{ line-height:33px; padding:0 5px; text-align:center;}
+/**bottom**/
+.bottom{ height:88px; border-top:1px solid #a6a6a6;}
+.bottom p{position:absolute; color:#333;}
+.yw{ width:660px; line-height:25px;color:#333; left:10px; top:22px;}
+.info{width:660px; line-height:25px;color:#333;left:10px; top:47px;}
+.copyright_id{line-height:25px;color:#333; top:22px; right:10px;}
+.copyright_info{line-height:25px;color:#333;  top:47px; right:10px;}
+/**public_left**/
+.public_left{ float:left; width:202px; background:#f2f2f2; overflow:hidden;  padding:20px 0 20px 13px;}
+.public_left ul{}
+.public_left ul li{ font-size:14px; width:168px; height:29px; line-height:29px; background:url(../images/all.png) -2px -37px no-repeat; margin-top:13px; padding-left:20px;}
+.public_left ul .now_li{ background:url(../images/all.png) -2px -2px no-repeat;}
+/**public_right**/
+.public_right{ width:732px; overflow:hidden; float:right;padding-top:20px;}
+.public_right h3{ height:43px; background:url(../images/site_bg.jpg) no-repeat; }
+.public_right h3 em{ font-size:22px; height:43px; line-height:43px; color:#2574b4; padding-left:15px; display:block; float:left;}
+.public_right h3 span{font-weight:normal; color:#666; float:right; display:block; padding-right:15px;}
+.public_right h3 span a{font-weight:normal; line-height:43px;  color:#666;}
+/**content**/
+.content{ padding:25px; overflow:hidden; line-height:25px;}
+.content p{line-height:25px;}
+.content p img{vertical-align:middle; margin:0 auto; display:block;}
+/**资讯列表**/
+.news_list{ overflow:hidden;}
+.news_list ul{ padding-top:10px;}
+.news_list ul li{ display:block; height:30px; line-height:30px; width:700px;border-bottom:1px solid #e2e2e2; background:url(../images/icojpg.jpg) 10px 12px no-repeat; padding-left:20px;}
+.news_list ul li a{ display:block; float:left; width:500px; height:30px; overflow:hidden;}
+.news_list ul li em{display:block; float:right; margin-right:15px;}
+/**分页**/
+.page{ text-align:center; line-height:30px; margin:10px 0 50px 0;}
+.page_num{ width:35px; text-align:center; height:20px; line-height:20px; border:1px solid #3d5c7c;}
+.page_jump{ width:38px; cursor:pointer; height:18px; border:none;border:1px solid #3d5c7c; background:#ece9d8;}
+.page a{ color:#4c4e50;}
+
+.page_2{text-align:center; line-height:30px; margin:10px auto 50px auto;}
+.page_2 a{ color:#4c4e50; padding:0 5px; border:1px solid #CCC; height:20px; line-height:20px; display:inline-block;  margin-right:5px;}
+/**内容页**/
+.show{}
+.show h1{ line-height:40px; width:700px; height:40px; margin:0 auto; overflow:hidden; text-align:center; font-size:16px; color:#333;}
+.show .some{ line-height:25px; text-align:center;}
+.show_text{ padding:10px 25px; line-height:25px;}
+/**上一篇、下一篇**/
+.pre{margin-top:30px;}
+.pre,.next{ height:25px; display:block; width:700px; overflow:hidden; line-height:25px; padding-left:25px;}
+.next{margin-bottom:50px;}
+/**产品**/
+.cp_list{ overflow:hidden;}
+.cp_list ul{ float:left; padding:30px 0 20px 40px;}
+.cp_list ul li{ float:left; display:inline; width:182px; height:170px; margin-right:40px; margin-bottom:20px;}
+.cp_list ul li a{ display:block; width:182px; height:170px;}
+.cp_list ul li a img{ width:176px; height:134px; padding:2px; border:1px solid #d9d9d9;}
+.cp_list ul li a em{ line-height:30px; height:30px; overflow:hidden;text-align:center; display:block;}
+/**联系我们**/
+.contact{ padding:55px 0 55px 55px; height:470px; overflow:hidden; position:relative;}
+.contact_img{ position:absolute; top:80px;}
+.contact_name{ position:absolute; right:80px;}
+.contact p{ position:absolute;left:320px; color:#333;  font-size:14px; line-height:25px;}
+.address{ top:100px;}
+.tel_all{ top:130px;}
+.tel_sell{ top:160px;}
+.fax{ top:190px;}
+.postcode{ top:220px;}
+.email{ top:250px;}
+.website{ top:280px;}
+/**在线留言**/
+.message{ width:700pxfloat:right; line-height:25px; overflow:hidden; position:relative; }
+.message .p_5{ width:605px; line-height:25px; border-bottom:1px #d2d2d2 dotted; margin:0 auto;}
+.message .Myform{width:595px;margin:0 auto;border:1px #d2d2d2 solid; margin-bottom:40px; padding:10px 0 0 10px; padding-bottom:80px;  }
+.message .Myform input{ background:#efefed; height:16px; margin:0 0 5px 0 ; border:1px #c2c3bb solid;}
+.message .Myform textarea{width:506px; height:150px;position:relative;overflow-x:visible;overflow-y:visible;min-width:506px; max-width:506px;min-height: 150px; max-height: 150px;border:1px solid #7f9db9; overflow-y:auto; 
+}
