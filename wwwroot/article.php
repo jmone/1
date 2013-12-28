@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>江西省探索户外运动发展有限公司</title>
+    <link rel="stylesheet" type="text/css" href="./index_files/layer.css">
+    <meta name="keywords" content="体育培训,户外培训,培训课程,户外运动,体育器材,健身器材,拓展器材,游乐设备">
+    <meta name="description" content="江西探索户外运动发展有限公司是目前江西体验式培训公司之一，致力于为国内外企业提供具有现代管理观念与技能的高级培训课程">
+    <link href="./index_files/css.css" rel="stylesheet" type="text/css">
+    <link href="./css/zzsc.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./index_files/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="./index_files/index.js"></script>
+    <script src="./index_files/layer.js" type="text/javascript"></script>
+    <script src="./index_files/public.js" type="text/javascript"></script>
+    <!--[if IE 6]>
+      <script type="text/javascript" src="http://www.tansuosport.com/js/png.js"></script>
+      <script type="text/javascript">
+        DD_belatedPNG.fix('*');
+      </script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="cbox" style=" margin-top:7px;">
+      <div class="top">
+        <a href="#" class="logo" title="江西省探索户外运动发展有限公司">
+          <img src="./index_files/logo.png" alt="江西省探索户外运动发展有限公司">
+        </a>
+        <img class="tips" src="./index_files/tips.png" alt="体验式培训专家，在快乐中体验，在体验中学习">
+      </div>
+      <div class="c_20"></div>
+      <div class="nav">
+        <a href="#">网站首页</a>
+        <a href="#">野外培训</a>
+        <a href="#">拓展培训</a>
+        <a href="#">趣味运动会</a>
+        <a href="#">会议服务</a>
+        <a href="#">户外运动</a>
+        <a href="#">新闻动态</a>
+        <a href="#">在线留言</a>
+        <a href="#">联系我们</a>
+        <span id="nav_a_bg" style="left: 30px; width: 90px;"></span>
+      </div>
+    </div>
+
+
+    <div class="cbox">
+      <div class="public_left">
+        <img src="./list_files/05.jpg" />
+        <ul id="kclb">
+          <li><a href="">登山</a></li>
+          <li><a href="">徒步</a></li>
+          <li><a href="">骑行</a></li>
+          <li class="now_li"><a href="">定向</a></li>
+          <li><a href="">滑雪</a></li>
+          <li><a href="">露营</a></li>
+          <li><a href="">漂流</a></li>
+          <li><a href="">速降</a></li>
+        </ul>
+        <div class="c_10"></div>
+        <a href="http://www.tansuosport.com/contact/" target="_blank"><img src="./list_files/contact.png" alt="联系我们"></a>
+        <div class="c_10"></div>
+        <a href="http://www.tansuosport.com/message/" target="_blank"><img src="./list_files/message.jpg" alt="给我留言"></a>
+      </div>
+
+      <div class="public_right">
+	<!--面包屑导航-->
+        <h3 class="site">
+          <span>
+            当前位置：<a href="#">首页</a>&nbsp;&gt;&nbsp;<a href="#">户外运动</a>&nbsp;&gt;&nbsp;<a href="javascript:;">定向</a>
+          </span>
+        </h3>
+        <div class="c"></div>
+	<!--标题区-->
+	<div class="title_area">
+		<div class="title">户外运动的起源、发展及现状</div>
+		<div class="stat">发表时间 2013-11-24 18:36 | 浏览 21385 次</div>
+	</div>
+        <div class="c"></div>
+	<!--内容-->
+	<div class="article_area">首页 野外培训 拓展培训 趣味运动会 会议服务 户外运动 关于我们 联系我们
+
+登山 徒步 骑行 定向 滑雪 露营 漂流 速降<br />
+
+起源发展<br />
+
+ 
+
+户外运动的历史，最早可追溯到18世纪的欧洲。<br />
+
+据史料记载，法国著名科学家德·索修尔为探索高山植物资源，渴望能有人帮他克服当时看来是不可<br />
+
+勃朗峰<br />
+
+勃朗峰<br /><br /><br /><br />
+
+逾越的险阻——登上阿尔卑斯山顶峰（在法国境内的勃朗峰，海拔4810米，是西欧的第一高峰）。他于1760年5月在阿尔卑斯山脚下的夏木尼镇贴出一则告示：“凡能登上或提供登上勃朗峰之巅线路者，将以重金奖赏。”直到26年后的1786年6月，夏木尼镇一位名叫巴卡罗的医生揭下了告示，他经过两个多月的准备，与当地山区水晶石采掘工人巴尔玛结伴，于8月6日首次登上了勃朗峰。<br />
+
+1787年8月3日，由德·索修尔本人率领、巴尔玛做向导的一支20多人组成的登山队，再次登上了该峰，揭开了现代登山运动的序幕。在整个登山过程中，他们进行了有关人体生理、自然环境等多方面的考察，取得了许多高山科学的宝贵资料。后来，人们把登山运动称为“阿尔卑斯运动”，把1786年作为登山运动的诞生年，把阿尔卑斯山下的夏木尼镇作为登山运动的发源地，德·索修尔、巴尔玛等人则成为世界登山运动的创始人，并得到了国际登山界的公认。<br />
+
+在18世纪，有一些传教士为了传教，不得不穿越山区；科学家开始走入山区，做一些自然生态的研究，除了这些人外，还有一些因拜工业革命所赐而形成的实业家和企业家等社会新阶层，这些人有了一定的资金后同时也为了追求另一种刺激，就开始把登山当成另一种休闲方式。在当时，首登（某座山头被人类第一次登顶）就成为所有登山者追求的目标，当那些在阿尔卑斯山区中，比较平缓而容易到达的山头都被首登过后，剩下的就是有着相当难度的大山了。当时的登山者，为了克服这些终年积雪的冰岩地形，进而发展出一整套技术。只是此时无论技术上还是装备上都还相当简陋。一直到第二次世界大战前后，为了符合特种地形作战上的需求，军队开始发展了这些技术，攀岩和野营才逐渐有了雏形，而真正形成分类的体育项目还是在上世纪70年代以后了。但这些项目的历史虽然很短，但在后几十年中已经成为各个发达国家里很普及的运动了，同时野外露营更是欧美国家上至老人下至童子军都十分喜爱的活动[1]。<br />
+</div>
+        <div class="c"></div>
+	<!--内容-->
+        <div class="share_area"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到网易微博" href="#" class="bds_t163" data-cmd="t163"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","t163"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","t163"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=86835285.js?cdnversion='+~(-new Date()/36e5)];</script></div>
+    </div>
+    </div>
+<?php require dirname(__FILE__).'/footer.php';?>
+  </body>
+
+</html>
