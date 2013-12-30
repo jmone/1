@@ -145,44 +145,38 @@
 		<div class="content">定向越野作为一种新兴的，利用地图和指北针导航的运动，在世界各地正吸引着越来越多人参与并为之狂热。它既是一种户外休闲、娱乐运动，又是一种竞技运动。参加定向运动除需要指北针和地图外，不需要特殊的设备，是一种较为经济的运动项目。</div>
 	</div>
         <div class="c"></div>
-	<!--列表-->
-	<div class="category_list">
+	<!--竖排列表-->
+	<div class="parent_category_1">
 		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
+			<div class="left"><img src="./images/list_1.jpg" width="229" height="134" /></div>
+			<div class="right">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
 		</div>
 		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
+			<div class="left"><img src="./images/list_2.jpg" width="229" height="134" /></div>
+			<div class="right">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。。</div>
 		</div>
 		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
+			<div class="left"><img src="./images/list_3.jpg" width="229" height="134" /></div>
+			<div class="right">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
 		</div>
 		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
+			<div class="left"><img src="./images/list_4.jpg" width="229" height="134" /></div>
+			<div class="right">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
 		</div>
+		<div class="item_more"><a href="./list.php">点击查看更多</a></div>
+	</div>
+	<!--竖排列表-->
+	<div class="parent_category_2">
 		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
+			<img src="./images/u51_normal.png" />
 		</div>
-		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
-		</div>
-		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
-		</div>
-		<div class="item">
-			<div class="left">登山（mountaineering）：是指在特定要求下，运动员徒手或使用专门装备，从低海拔地形向高海拔山峰进行攀登的一项体育活动。登山运动可分为登山探险（也称高山探险）、竞技攀登（包括攀岩、攀冰等）和健身性登山。登山设备要适应登山运动的环境条件，在设计、选材、用料、制作上要尽量使其轻便、坚固、高效，并能一物多用。</div>
-			<div class="right"><img src="./images/u51_normal.png" /></div>
-		</div>
+		<div class="item"><img src="./images/u51_normal.png" /></div>
+		<div class="item"><img src="./images/u51_normal.png" /></div>
+		<div class="item"><img src="./images/u51_normal.png" /></div>
+		<div class="item"><img src="./images/u51_normal.png" /></div>
+		<div class="item"><img src="./images/u51_normal.png" /></div>
 	</div>
 	
-        <div class="c"></div>
-	<!--分页-->
     </div>
     </div>
 <?php require dirname(__FILE__).'/footer.php';?>

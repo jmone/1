@@ -397,16 +397,9 @@
                 <b>友情链接：</b>
                 <a href="#" target="_blank">汕头婚纱摄影</a> | 
 		<a href="#" target="_blank">高新材料</a> |
-                <a href="#" target="_blank">运动器材
-                </a>
-                |
-                <a href="#" target="_blank">
-                  拓展器材
-                </a>
-                |
-                <a href="#" target="_blank">
-                  中国体育设施网
-                </a>
+                <a href="#" target="_blank">运动器材</a> |
+                <a href="#" target="_blank">拓展器材</a>|
+                <a href="#" target="_blank">中国体育设施网</a>
       </div>
     </div>
     <script type="text/javascript">
@@ -449,22 +442,9 @@
         }
       })
     </script>
-    <div class="cbox">
-      <div class="bottom" style="position:relative; z-index:99999;">
-        <p class="yw">
-          主营业务：体育器材、健身器材、拓展器材、游乐设备等研发、生产、服务
-        </p>
-        <p class="info">
-          电话；0791-88308181传真：0791-88315368地址：江西省南昌市京东大道168号联创光电科技园六楼
-        </p>
-        <p class="copyright_id">
-          赣ICP备12005618号
-        </p>
-        <p class="copyright_info">
-          版权所有：江西省探索户外运动发展有限公司
-        </p>
-      </div>
-    </div>
+
+<?php require dirname(__FILE__).'/footer.php';?>
+
     <style type="text/css">
       *html{overflow-x:hidden}*html#shop_kefu{position:absolute;_top:expression(documentElement.scrollTop+100+"px")}*html#shop_kefu_list{position:absolute;_top:expression(documentElement.scrollTop+100+"px")}#shop_kefu{width:30px;overflow:hidden;position:fixed;_position:absolute;height:105px;display:block;background:url(../../images/shop_kefu/kefu1/all_png.png)no-repeat-1px-67px;right:0px;top:100px;z-index:9999;cursor:pointer}#shop_kefu_list{width:132px;padding-bottom:15px;display:block;position:fixed;_position:absolute;right:1px;_right:0px;top:100px;z-index:9999;display:none}#shop_kefu_top{height:31px;width:132px;background:url(../../images/shop_kefu/kefu1/all_png.png)no-repeat
       0 0}#shop_kefu_list ul{border:1px solid#febb90;_ width:117px;_margin-top:-1px;border-bottom:none;padding:2px
