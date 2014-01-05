@@ -1,0 +1,322 @@
+/*
+YUI 3.14.0 (build a01e97d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+html {
+    color: #000;
+    background: #FFF
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    /*font-weight: normal*/
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    /*font-weight: normal*/
+}
+
+q:before, q:after {
+    content: ''
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    *font-size: 100%
+}
+
+legend {
+    color: #000
+}
+
+/*--------------------*/
+
+html {
+    position: relative;
+    background: #000 url("bg.png") top center no-repeat;
+    background-size: 100%;
+}
+body {
+    font-family: Arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+    color: #555151;
+    font-size: 20px;
+}
+/*1280 1344 1440 1600 1680 1920*/
+@media (max-width:1343px) and (min-width: 1280px) {
+    body {
+        font-size: 20px;
+    }
+}
+@media (max-width:1439px) and (min-width: 1344px) {
+    body {
+        font-size: 22px;
+    }
+}
+@media (max-width:1599px) and (min-width: 1440px) {
+    body {
+        font-size: 24px;
+    }
+}
+@media (max-width:1679px) and (min-width: 1600px) {
+    body {
+        font-size: 26px;
+    }
+}
+@media (max-width:1900px) and (min-width: 1680px) {
+    body {
+        font-size: 28px;
+    }
+}
+@media (min-width: 1901px) {
+    body {
+        font-size: 30px;
+    }
+}
+
+
+
+a {
+    cursor: pointer;
+}
+
+.wrap {
+    width: 58em;
+    margin: 0 auto;
+}
+
+h1 {
+	height: 9.5em;
+	margin: 0; 
+	
+	background: url(title.png) center no-repeat;
+	background-size: 55% 75%;
+    color: #dab159;
+    text-align: center;
+	text-indent:-9999px;
+}
+h1 strong {
+    display: block;
+}
+
+.col_l,
+.col_r {
+    border-radius: 0.15em;
+    overflow: hidden;
+}
+.col_l {
+    float: left;
+    width: 28em;
+}
+.col_r {
+    float: right;
+    width: 28em;
+}
+h2 {
+    background: #dab159;
+    /*font-size: 20px;*/
+}
+h2 span {
+    float: right;
+    padding-left: 2em;
+    background: url("icon_head.png") left center no-repeat;
+}
+
+.col_l {}
+.col_l h2 {
+    line-height: 2.5em;
+    padding: 0 3em 0 1.75em;
+}
+.col_l .user_list {
+    height: 17.5em;
+    border-radius: 0 0 0.15em 0.15em;
+    background: #fff;
+    overflow: hidden;
+}
+.col_l ul {
+    margin-top: 0.1em;
+    overflow: auto;
+}
+.col_l li {
+    float: left;
+    width: 7em;
+    line-height: 2.4em;
+    border-bottom: 0.1em solid #dddada;
+    text-align: center;
+}
+
+.btns {
+    height: 3.5em;
+    margin-top: 1em;
+}
+.btns a {
+    font-size: 1.6em; /*32px*/
+
+    float: left;
+    line-height: 2.1875em;
+    margin-right: 0.3125em;
+    padding: 0 1em 0 1.5em;
+    background: #dab159;
+    border-radius: 0.15em;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btns a:hover {
+    opacity: 0.8;
+}
+.btns a span {
+    display: block;
+    line-height: 2.1875em;
+    padding-right: 1.7em;
+}
+.btns .start span {
+    background: url("icon_start.png") right center no-repeat;
+}
+.btns .reset {
+    background: #938f87;
+}
+.btns .reset span {
+    background: url("icon_reset.png") right center no-repeat;
+}
+
+.num {
+    margin-top: 1em;
+    color: #ffefd1;
+    /*font-size: 20px;*/
+}
+.num input {
+    width: 4em;
+    margin-left: 0.5em;
+    padding: 0.2em;
+    border: none;
+    border-radius: 0.15em;
+    box-shadow: inset 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.col_r {
+    height: 28em;
+    background: #fff;
+}
+.col_r h2 {
+    line-height: 2.5em;
+    padding: 0 3em 0 2.25em;
+}
+.col_r li {
+    line-height: 2.2em;
+    overflow: auto;
+}
+.col_r .lucky_list li {
+    border-top: 0.1em solid #e2dfdf;
+}
+.col_r li span {
+    float: left;
+    width: 5.5em;
+    text-align: right;
+}
+.col_r li span + span {
+    width: 10em;
+    text-align: center;
+}
+.col_r li span + span + span {
+    width: auto;
+    text-align: left;
+}
+
+
+.pop {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.pop .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.pop .dialog {
+    font-size: 2em; /*40px*/
+
+    display: none;
+    position: relative;
+    width: 13.5em;
+    height: 6.5em;
+    margin: 5.5em auto 0;
+    border-radius: 0.15em;
+    background: #fff;
+    color: #555151;
+    text-align: center;
+}
+.pop .dialog h3 {
+    line-height: 3em;
+    padding-top: 0.375em;
+}
+.pop .dialog .btn {
+    display: block;
+    width: 6em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    border-radius: 0.15em;
+    background: #dab159;
+    color: #fff;
+    text-decoration: none;
+}
+.pop .dialog .btn:hover {
+    opacity: 0.8;
+}
+.pop .dialog .close {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 0.125em;
+    color: #fff;
+    font-weight: bold;
+}
