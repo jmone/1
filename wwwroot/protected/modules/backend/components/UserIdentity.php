@@ -33,33 +33,6 @@ class UserIdentity extends CUserIdentity
                 return true;
             }
             return false;
-//		$ds = @ldap_connect('10.237.2.12', '389');
-                $ds = @ldap_connect('10.237.8.2', '389');
-//                $ds = @ldap_connect('10.237.8.3', '389');         
-		ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 2);
-		if ($ds !== false) {
-			$rt = @ldap_bind($ds, "xiaomi\\" . $user, $pass);
-
-			if($rt === true) {
-				return true;
-			}else{
-				$ds_again = @ldap_connect('10.237.8.2', '389');
-//                                $ds_again = @ldap_connect('10.237.8.3', '389');
-				ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 2);
-				if($ds_again !== false) {
-					$rt_again = @ldap_bind($ds_again, "xiaomi\\" . $user, $pass);
-					if($rt_again === true) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-				return false;
-			}
-
-		} else {
-			return false;
-		}
 	}
 	
 	/**

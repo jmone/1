@@ -3,6 +3,7 @@
 class SiteController extends RController
 {
 	public $layout='/layouts/column2';
+	public $defaultAction='admin';
 
 	//Rights 接管权限管理 Begin
 	public function filters()
@@ -113,14 +114,6 @@ class SiteController extends RController
 
 		$this->render('admin',array(
 			'model'=>$model,
-		));
-	}
-
-	public function actionSetting($siteid){
-		$siteid = intval($siteid);
-		//判断该站点是否属于该用户
-		$this->render('setting', array(
-			'model'=>$this->loadModel($siteid),
 		));
 	}
 
