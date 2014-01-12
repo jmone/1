@@ -44,7 +44,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'uid',
 		array(
 			'name' => 'name',
-			'value' => 'CHtml::link($data->name, "/admin/site/setting/siteid/".$data->id)',
+			'value' => 'CHtml::link($data->name, "/admin/setting/index/siteid/".$data->id)',
 			'type' => 'raw',
 		),
 		'keywords',
