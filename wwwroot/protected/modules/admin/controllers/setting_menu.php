@@ -1,5 +1,4 @@
 <?php
-
 return array(
     'index' => array('label' => '网站概览', 'icon' => 'icon-th-large', 'url' => array('/admin/setting/index/siteid/'.$this->siteid)),
     'setting' => array('label' => '网站设置', 'icon' => 'icon-plus', 'url' => array('/admin/setting/update/siteid/'.$this->siteid)),

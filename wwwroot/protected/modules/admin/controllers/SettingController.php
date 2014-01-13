@@ -25,4 +25,60 @@ class SettingController extends RController
 			'model'=>$model,
 		));
 	}
+
+	public function actionUpdate(){
+
+	}
+
+	public function actionArticle(){
+		$model=new Article('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Article']))
+			$model->attributes=$_GET['Article'];
+
+		$this->render('/article/admin',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionCategory(){
+		$model=new ArticleCategory('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['ArticleCategory']))
+			$model->attributes=$_GET['ArticleCategory'];
+
+		$this->render('/articleCategory/admin',array(
+			'model'=>$model,
+		));
+	}
+	public function actionMessage(){
+		$model=new Message('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Message']))
+			$model->attributes=$_GET['Message'];
+
+		$this->render('/message/admin',array(
+			'model'=>$model,
+		));
+	}
+	public function actionFriendLink(){
+		$model=new FriendLink('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['FriendLink']))
+			$model->attributes=$_GET['FriendLink'];
+
+		$this->render('/friendLink/admin',array(
+			'model'=>$model,
+		));
+	}
+	public function actionJob(){
+		$model=new Job('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Job']))
+			$model->attributes=$_GET['Job'];
+
+		$this->render('/job/admin',array(
+			'model'=>$model,
+		));
+	}
 }
