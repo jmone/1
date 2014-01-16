@@ -6,13 +6,8 @@ $this->breadcrumbs=array(
 	'Jobs'=>array('index'),
 	'Create',
 );
-
-$this->menu=array(
-	array('label'=>'List Job', 'url'=>array('index')),
-	array('label'=>'Manage Job', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Create Job</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('/job/_form', array('model'=>$model)); ?>

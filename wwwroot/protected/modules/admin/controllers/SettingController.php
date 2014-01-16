@@ -4,6 +4,7 @@ class SettingController extends RController
 {
 	public $layout='/layouts/column2';
 	private $siteid = 0;
+    private $uid = 0;
 
 	//Rights 接管权限管理 Begin
 	public function filters(){
@@ -16,20 +17,33 @@ class SettingController extends RController
 		parent::init();
 		$this->siteid = intval($_GET['siteid']);
 		//判断该站点是否属于该用户
+		$this->uid = intval(Yii::app()->user->getId());
+        $data = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('site')
+                ->where('id=:siteid AND uid=:uid', array(
+                    ':siteid' =>  $this->siteid,
+                    ':uid' => $this->uid,
+                ))->queryRow();
+        if(empty($data)){
+            exit('Access Denied');
+        }
+        
 		$this->menu = require 'setting_menu.php';
 	}
 
-	public function actionIndex($siteid){
-		$model=Site::model()->findByPk($siteid);
+	public function actionIndex(){
+		$model=Site::model()->findByPk($this->siteid);
 		$this->render('/site/setting',array(
 			'model'=>$model,
 		));
 	}
-
 	public function actionUpdate(){
-
+		$model=Site::model()->findByPk($this->siteid);
+		$this->render('/site/setting',array(
+			'model'=>$model,
+		));
 	}
-
 	public function actionArticle(){
 		$model=new Article('search');
 		$model->unsetAttributes();  // clear any default values
@@ -38,16 +52,57 @@ class SettingController extends RController
 
 		$this->render('/article/admin',array(
 			'model'=>$model,
+            'siteid' =>  $this->siteid,
 		));
 	}
+	public function actionCreateArticle(){
+		$model=new Article;
 
-	public function actionCategory(){
+		if(isset($_POST['Article'])){
+			$model->attributes=$_POST['Article'];
+			if($model->save()){
+				$this->redirect(array('/admin/view/article','id'=>$model->id));
+            }
+		}
+
+		$this->render('/article/create',array(
+			'model'=>$model,
+		));
+	}
+	public function actionArticleCategory(){
 		$model=new ArticleCategory('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['ArticleCategory']))
 			$model->attributes=$_GET['ArticleCategory'];
 
 		$this->render('/articleCategory/admin',array(
+			'model'=>$model,
+            'siteid' =>  $this->siteid,
+		));
+	}
+	public function actionCreateArticleCategory(){
+		$model=new ArticleCategory;
+        $model->setAttribute('site_id', $this->siteid);
+
+		if(isset($_POST['ArticleCategory'])){
+			$model->attributes=$_POST['ArticleCategory'];
+			if($model->save()){
+				$this->redirect(array('/admin/view/articleCategory','id'=>$model->id,'siteid'=>$this->siteid));
+            }
+		}
+
+		$this->render('/articleCategory/create',array(
+			'model'=>$model,
+		));
+	}
+	public function actionViewArticleCategory($id)
+	{
+		$model=ArticleCategory::model()->findByPk($id);
+		if($model===null){
+			throw new CHttpException(404,'The requested page does not exist.');
+        }
+        
+		$this->render('/articleCategory/view',array(
 			'model'=>$model,
 		));
 	}
@@ -69,15 +124,46 @@ class SettingController extends RController
 
 		$this->render('/friendLink/admin',array(
 			'model'=>$model,
+            'siteid' =>  $this->siteid,
+		));
+	}
+	public function actionCreateFriendLink(){
+		$model=new FriendLink;
+
+		if(isset($_POST['FriendLink'])){
+			$model->attributes=$_POST['FriendLink'];
+			if($model->save()){
+				$this->redirect(array('/admin/view/friendLink','id'=>$model->id));
+            }
+		}
+
+		$this->render('/friendLink/create',array(
+			'model'=>$model,
 		));
 	}
 	public function actionJob(){
 		$model=new Job('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Job']))
+		if(isset($_GET['Job'])){
 			$model->attributes=$_GET['Job'];
+        }
 
 		$this->render('/job/admin',array(
+			'model'=>$model,
+            'siteid' =>  $this->siteid,
+		));
+	}
+	public function actionCreateJob(){
+		$model=new Job;
+
+		if(isset($_POST['Job'])){
+			$model->attributes=$_POST['Job'];
+			if($model->save()){
+				$this->redirect(array('/admin/view/job','id'=>$model->id));
+            }
+		}
+
+		$this->render('/job/create',array(
 			'model'=>$model,
 		));
 	}

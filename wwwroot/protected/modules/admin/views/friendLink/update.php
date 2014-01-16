@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update FriendLink <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('/friendLink/_form', array('model'=>$model)); ?>

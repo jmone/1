@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'article':
  * @property integer $id
- * @property integer $site_id
+ * @property integer $category_id
  * @property string $title
  * @property string $description
  * @property string $content
@@ -29,13 +29,13 @@ class Article extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('site_id, title, content, dateline', 'required'),
-			array('site_id, dateline', 'numerical', 'integerOnly'=>true),
+			array('category_id, title, content, dateline', 'required'),
+			array('category_id, dateline', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>30),
 			array('description', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, site_id, title, description, content, dateline', 'safe', 'on'=>'search'),
+			array('id, category_id, title, description, content, dateline', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,7 +57,7 @@ class Article extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'site_id' => 'Site',
+			'category_id' => 'Category',
 			'title' => 'Title',
 			'description' => 'Description',
 			'content' => 'Content',
@@ -84,7 +84,7 @@ class Article extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('site_id',$this->site_id);
+		$criteria->compare('category_id',$this->category_id);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('content',$this->content,true);

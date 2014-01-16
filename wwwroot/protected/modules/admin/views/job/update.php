@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update Job <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('/job/_form', array('model'=>$model)); ?>
