@@ -55,11 +55,11 @@ class ArticleCategory extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'site_id' => 'Site',
-			'parent_id' => 'Parent',
-			'name' => 'Name',
-			'description' => 'Description',
+			'id' => '编号',
+			'site_id' => '所属站点',
+			'parent_id' => '上级分类',
+			'name' => '分类名称',
+			'description' => '分类描述',
 		);
 	}
 
@@ -88,8 +88,15 @@ class ArticleCategory extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => 30,
+            ),
+            'sort' => array(
+                //默认排序
+                'defaultOrder' => 'id DESC'
+            )
+        ));
 	}
 
 	/**

@@ -146,5 +146,55 @@ class DeleteController extends RController
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
+    public function actionIndexSlide(){
+        $id = intval(Yii::app()->request->getParam('id'));
+		$model=IndexSlide::model()->findByPk($id);
+		if($model===null){
+			throw new CHttpException(404,'The requested page does not exist.');
+        }
+        
+        //判断是否属于当前管理员
+        $data = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('site')
+                ->where('id=:siteid AND uid=:uid', array(
+                    ':siteid' =>  $model->attributes['site_id'],
+                    ':uid' => $this->uid,
+                ))->queryRow();
+        if(empty($data)){
+			throw new CHttpException(403,'Access Denied.');
+        }
+        
+		$model->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+    }
+    public function actionNavigationLink(){
+        $id = intval(Yii::app()->request->getParam('id'));
+		$model=NavigationLink::model()->findByPk($id);
+		if($model===null){
+			throw new CHttpException(404,'The requested page does not exist.');
+        }
+        
+        //判断是否属于当前管理员
+        $data = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('site')
+                ->where('id=:siteid AND uid=:uid', array(
+                    ':siteid' =>  $model->attributes['site_id'],
+                    ':uid' => $this->uid,
+                ))->queryRow();
+        if(empty($data)){
+			throw new CHttpException(403,'Access Denied.');
+        }
+        
+		$model->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+    }
 }
 ?>

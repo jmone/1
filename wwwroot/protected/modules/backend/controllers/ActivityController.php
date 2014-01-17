@@ -7,8 +7,7 @@ class ActivityController extends RController
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='/layouts/column2';
-        
-        public $defaultAction = 'admin';
+    public $defaultAction = 'admin';
 
 	//Rights 接管权限管理 Begin
 	public function filters()

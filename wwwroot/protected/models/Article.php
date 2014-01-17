@@ -9,6 +9,7 @@
  * @property string $title
  * @property string $description
  * @property string $content
+ * @property string $position
  * @property integer $dateline
  */
 class Article extends CActiveRecord
@@ -33,9 +34,10 @@ class Article extends CActiveRecord
 			array('category_id, dateline', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>30),
 			array('description', 'length', 'max'=>200),
+			array('position', 'length', 'max'=>300),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, category_id, title, description, content, dateline', 'safe', 'on'=>'search'),
+			array('id, category_id, title, description, content, position, dateline', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +63,7 @@ class Article extends CActiveRecord
 			'title' => 'Title',
 			'description' => 'Description',
 			'content' => 'Content',
+			'position' => 'Position',
 			'dateline' => 'Dateline',
 		);
 	}
@@ -88,6 +91,7 @@ class Article extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('content',$this->content,true);
+		$criteria->compare('position',$this->position,true);
 		$criteria->compare('dateline',$this->dateline);
 
 		return new CActiveDataProvider($this, array(

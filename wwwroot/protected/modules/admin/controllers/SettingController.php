@@ -167,4 +167,56 @@ class SettingController extends RController
 			'model'=>$model,
 		));
 	}
+	public function actionIndexSlide(){
+		$model=new IndexSlide('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['IndexSlide'])){
+			$model->attributes=$_GET['IndexSlide'];
+        }
+
+		$this->render('/indexSlide/admin',array(
+			'model'=>$model,
+            'siteid' =>  $this->siteid,
+		));
+	}
+	public function actionCreateIndexSlide(){
+		$model=new IndexSlide;
+
+		if(isset($_POST['IndexSlide'])){
+			$model->attributes=$_POST['IndexSlide'];
+			if($model->save()){
+				$this->redirect(array('/admin/setting/indexSlide','siteid'=>$this->siteid));
+            }
+		}
+
+		$this->render('/indexSlide/create',array(
+			'model'=>$model,
+		));
+	}
+	public function actionNavigationLink(){
+		$model=new NavigationLink('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['NavigationLink'])){
+			$model->attributes=$_GET['NavigationLink'];
+        }
+
+		$this->render('/navigationLink/admin',array(
+			'model'=>$model,
+            'siteid' =>  $this->siteid,
+		));
+	}
+	public function actionCreateNavigationLink(){
+		$model=new NavigationLink;
+
+		if(isset($_POST['NavigationLink'])){
+			$model->attributes=$_POST['NavigationLink'];
+			if($model->save()){
+				$this->redirect(array('/admin/setting/navigationLink','siteid'=>$this->siteid));
+            }
+		}
+
+		$this->render('/navigationLink/create',array(
+			'model'=>$model,
+		));
+	}
 }

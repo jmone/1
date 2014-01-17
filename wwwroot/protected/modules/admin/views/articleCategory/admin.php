@@ -36,7 +36,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'article-category-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -47,28 +47,38 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'name',
 		'description',
 		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{view} {update} {delete}',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+			'template'=>'{view} {slide} {update} {delete}',
 			'buttons'=>array(
 				'view'=>array(
 					'label'=>'查看',
-					'icon' =>'share-alt',
+					'icon' =>'eye-open',
 					'url' => 'Yii::app()->createUrl("/admin/view/articleCategory", array("id" => $data->id))',
+					'options' => array('class'=>'sendone'),
+				),
+				'slide'=>array(
+					'label'=>'推荐幻灯图',
+					//'icon' => 'thumbs-up',
+                    'icon' => 'picture',
+					'url' => 'Yii::app()->createUrl("/admin/articleCategorySlide/create", array("category_id" => $data->id))',
 					'options' => array('class'=>'sendone'),
 				),
 				'update'=>array(
 					'label'=>'更新',
-					'icon' =>'share-alt',
+					'icon' =>'edit',
 					'url' => 'Yii::app()->createUrl("/admin/update/articleCategory", array("id" => $data->id))',
 					'options' => array('class'=>'sendone'),
 				),
 				'delete'=>array(
 					'label'=>'删除',
-					'icon' =>'retweet',
+					'icon' =>'remove',
 					'url' => 'Yii::app()->createUrl("/admin/delete/articleCategory", array("id" => $data->id))',
 					'options' => array('class'=>'replyone'),
 				)
-			)
+			),
+            'htmlOptions'=>array(
+                'style'=>'width:80px;'
+            ),
 		),
 	),
 )); ?>

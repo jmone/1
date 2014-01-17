@@ -44,6 +44,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'position'); ?>
+		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>300)); ?>
+		<?php echo $form->error($model,'position'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'dateline'); ?>
 		<?php echo $form->textField($model,'dateline'); ?>
 		<?php echo $form->error($model,'dateline'); ?>

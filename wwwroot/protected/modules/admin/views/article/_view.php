@@ -25,6 +25,10 @@
 	<?php echo CHtml::encode($data->content); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('position')); ?>:</b>
+	<?php echo CHtml::encode($data->position); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dateline')); ?>:</b>
 	<?php echo CHtml::encode($data->dateline); ?>
 	<br />

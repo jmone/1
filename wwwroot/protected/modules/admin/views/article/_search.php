@@ -37,6 +37,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'position'); ?>
+		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>300)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'dateline'); ?>
 		<?php echo $form->textField($model,'dateline'); ?>
 	</div>
