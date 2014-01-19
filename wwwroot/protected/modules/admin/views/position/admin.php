@@ -43,7 +43,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'id',
 		'site_id',
-		'title',
+        'name',
+		//'title',
 		array(
 			'name' => 'title',
 			'value' => 'CHtml::link($data->title, "/admin/positionData/admin/position_id/".$data->id)',

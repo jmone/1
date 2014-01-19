@@ -32,6 +32,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'image_path'); ?>
+		<?php echo $form->textField($model,'image_path',array('size'=>60,'maxlength'=>300)); ?>
+		<?php echo $form->error($model,'image_path'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
 		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'description'); ?>

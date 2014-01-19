@@ -13,6 +13,10 @@
 	<?php echo CHtml::encode($data->site_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
+	<?php echo CHtml::encode($data->name); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
@@ -29,9 +33,11 @@
 	<?php echo CHtml::encode($data->url); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dateline')); ?>:</b>
 	<?php echo CHtml::encode($data->dateline); ?>
 	<br />
 
+	*/ ?>
 
 </div>

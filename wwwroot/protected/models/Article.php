@@ -7,6 +7,7 @@
  * @property integer $id
  * @property integer $category_id
  * @property string $title
+ * @property string $image_path
  * @property string $description
  * @property string $content
  * @property string $position
@@ -33,11 +34,11 @@ class Article extends CActiveRecord
 			array('category_id, title, content, dateline', 'required'),
 			array('category_id, dateline', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>30),
+			array('image_path, position', 'length', 'max'=>300),
 			array('description', 'length', 'max'=>200),
-			array('position', 'length', 'max'=>300),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, category_id, title, description, content, position, dateline', 'safe', 'on'=>'search'),
+			array('id, category_id, title, image_path, description, content, position, dateline', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +62,7 @@ class Article extends CActiveRecord
 			'id' => 'ID',
 			'category_id' => 'Category',
 			'title' => 'Title',
+			'image_path' => 'Image Path',
 			'description' => 'Description',
 			'content' => 'Content',
 			'position' => 'Position',
@@ -89,6 +91,7 @@ class Article extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('category_id',$this->category_id);
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('image_path',$this->image_path,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('position',$this->position,true);

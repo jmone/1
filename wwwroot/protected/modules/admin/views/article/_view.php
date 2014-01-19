@@ -17,6 +17,10 @@
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('image_path')); ?>:</b>
+	<?php echo CHtml::encode($data->image_path); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
@@ -29,9 +33,11 @@
 	<?php echo CHtml::encode($data->position); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dateline')); ?>:</b>
 	<?php echo CHtml::encode($data->dateline); ?>
 	<br />
 
+	*/ ?>
 
 </div>

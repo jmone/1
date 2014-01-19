@@ -25,86 +25,75 @@
   <body>
     <div class="cbox" style=" margin-top:7px;">
       <div class="top">
-        <a href="#" title="江西省探索户外运动发展有限公司" class="top_banner">
+        <!--a href="#" title="江西省探索户外运动发展有限公司" class="top_banner">
           <img src="./images/banner.jpg" alt="江西省探索户外运动发展有限公司">
-        </a>
+        </a-->
         <a href="#" class="logo" title="江西省探索户外运动发展有限公司">
-          <img src="./index_files/logo.png" alt="江西省探索户外运动发展有限公司">
+          <img src="./images/logo-01.png" alt="江西省探索户外运动发展有限公司">
         </a>
-        <img class="tips" src="./index_files/tips.png" alt="体验式培训专家，在快乐中体验，在体验中学习">
+        <img class="tips" src="./images/logo-02.png" alt="体验式培训专家，在快乐中体验，在体验中学习">
       </div>
       <div class="c_20"></div>
       <div class="nav">
-        <a href="#">网站首页</a>
-        <a href="#">野外培训</a>
-        <a href="#">拓展培训</a>
-        <a href="#">趣味运动会</a>
-        <a href="#">会议服务</a>
-        <a href="#">户外运动</a>
-        <a href="#">新闻动态</a>
-        <a href="#">在线留言</a>
-        <a href="#">联系我们</a>
+        <?php
+        $count = count($data['navigation_link']);
+        for($i=0; $i<$count; $i++){
+       ?>
+          <a href="<?php echo $data['navigation_link'][$i]['url']; ?>" target="_blank"><?php echo $data['navigation_link'][$i]['name']; ?></a>
+       <?php
+       }
+       ?>
         <span id="nav_a_bg" style="left: 30px; width: 90px;"></span>
       </div>
     </div>
     <div class="cbox">
       <div class="description">
-        <h3><em>公司简介</em></h3>
+        <h3><em><?php echo $data['position'][1]['title']; ?></em></h3>
         <div class="content">
           <?php
-          $count = count($data['position_data'][1]);
+          $count = min(count($data['position_data'][1]), 1);
           for($i=0; $i<$count; $i++){
-              
+              echo $data['position_data'][1][$i]['content'];
           }
           ?>
         </div>
       </div>
       <div class="focusBox" style="margin:10px auto">
         <ul class="pic" style="position: relative; width: 640px; height: 240px;">
+        <?php
+            $count = min(count($data['index_slide']), 6);
+            for($i=0; $i<$count; $i++){
+        ?>
           <li style="position: absolute; width: 640px; left: 0px; top: 0px; display: none;">
-            <a href="#" target="_blank">
-              <img src="images/1.jpg" />
-            </a>
+            <a href="<?php echo $data['index_slide'][$i]['url'];?>" target="_blank"><img src="<?php echo $data['index_slide'][$i]['image_path'];?>" /></a>
           </li>
-          <li style="position: absolute; width: 640px; left: 0px; top: 0px; display: none;">
-            <a href="#" target="_blank">
-              <img src="images/2.jpg" />
-            </a>
-          </li>
-          <li style="position: absolute; width: 640px; left: 0px; top: 0px; display: none;">
-            <a href="#" target="_blank">
-              <img src="images/3.jpg" />
-            </a>
-          </li>
-          <li style="position: absolute; width: 640px; left: 0px; top: 0px; display: none;">
-            <a href="#" target="_blank">
-              <img src="images/4.jpg" />
-            </a>
-          </li>
-          <li style="position: absolute; width: 640px; left: 0px; top: 0px; display: list-item;">
-            <a href="#" target="_blank">
-              <img src="images/5.jpg" />
-            </a>
-          </li>
+        <?php
+            }
+        ?>
         </ul>
         <div class="txt-bg">
         </div>
         <div class="txt">
           <ul>
-            <li style="bottom: -36px;"><a href="#">美女福利图DoubleLi</a></li>
-            <li style="bottom: -36px;"><a href="#">美女福利图DoubleLi</a></li>
-            <li style="bottom: -36px;"><a href="#">美女福利图DoubleLi</a></li>
-            <li style="bottom: -36px;"><a href="#">美女福利图DoubleLi</a></li>
-            <li style="bottom: -36px;"><a href="#">美女福利图DoubleLi</a></li>
-            <li style="bottom: 0px;"><a href="#">美女福利图Quiet</a></li>
+        <?php
+            $count = min(count($data['index_slide']), 6);
+            for($i=0; $i<$count; $i++){
+        ?>
+            <li style="bottom: -36px;"><a href="<?php echo $data['index_slide'][$i]['url'];?>"><?php echo $data['index_slide'][$i]['title'];?></a></li>
+        <?php
+            }
+        ?>
           </ul>
         </div>
         <ul class="num">
-          <li class=""><a> 1 </a><span></span></li>
-          <li class=""><a> 2 </a><span></span></li>
-          <li class=""><a> 3 </a><span></span></li>
-          <li class=""><a> 4 </a><span></span></li>
-          <li class="on"><a> 5 </a><span></span></li>
+        <?php
+            $count = min(count($data['index_slide']), 6);
+            for($i=0; $i<$count; $i++){
+        ?>
+          <li class=""><a> <?php echo $i+1;?> </a><span></span></li>
+        <?php
+            }
+        ?>
         </ul>
       </div>
       <script type="text/javascript">
@@ -132,240 +121,117 @@
           <div class="company_left">
             <h4>
               <em>
-                联系我们
+                <?php echo $data['position'][2]['title']; ?>
               </em>
-              <a href="#" class="more">
+              <a href="<?php echo $data['position_data'][2]['url']; ?>" class="more">
                 更多&gt;&gt;
               </a>
             </h4>
             <div class="company_left_box">
-              北京鼎丰之旅文化发展有限公司<br/>
-              地址：北京市海淀区金源商务中心A座17F<br/>
-              邮编：10089<br/>
-              电话：(010)82398588<br/>
-              传真：(010)82398589<br/>
-              网址：www.hipeak.com.cn<br/>
-              www.hipeakty.com
+            <?php
+            $count = min(count($data['position_data'][2]), 1);
+            for($i=0; $i<$count; $i++){
+                echo $data['position_data'][2][$i]['content'];
+            }
+            ?>
             </div>
           </div>
           <div class="company_left company_right">
             <h4>
-              <em>业务简介</em>
-              <a href="#" class="more">
+              <em><?php echo $data['position'][3]['title']; ?></em>
+              <a href="<?php echo $data['position_data'][3]['url']; ?>" class="more">
                 更多&gt;&gt;
               </a>
             </h4>
             <div class="company_left_box company_right_box">
-              <img src="./index_files/03.jpg">
-              &nbsp;&nbsp;&nbsp;&nbsp;江西探索户外运动发展有限公司是目前江西体验式培训公司之一，致力于为国内外企业提供具有现代管理观念与技能的高级培训课程。诺贝乐经济学奖获得者，美国著名教授舒尔茨曾说过：“投在人脑中的钱比投在机器的能够赚更多的钱。投资于人力资本比投资于物质资本能够产生更持久的效益。”这个结论早被二十世纪经济发展所证明。在全球随着经济一体化的进程，越来越多企业开始重视对人才的培养，把对人力资本的投入作为提升企业竞争力的重要途径。在摩托罗拉公司，每投入一美...
-              <a href="#" target="_blank">
-                详细&gt;&gt;
-              </a>
+            <?php
+            $count = min(count($data['position_data'][3]), 1);
+            for($i=0; $i<$count; $i++){
+                echo $data['position_data'][3][$i]['content'];
+            }
+            ?>
             </div>
           </div>
         </div>
       </div>
       <div class="right">
         <h5>
-          <em>
-            拓展知识
-          </em>
-          <a href="#" target="_blank">
-            更多
-          </a>
+          <em><?php echo $data['position'][4]['title']; ?></em>
+          <a href="<?php echo $data['position'][4]['url']; ?>" target="_blank">更多</a>
         </h5>
         <ul class="new_list" style="height:182px;_height:185px;  border-bottom:1px solid #e5e5e5;">
+        <?php
+            $count = min(count($data['position_data'][4]), 8);
+            for($i=0; $i<$count; $i++){
+        ?>
           <li>
-            <a href="#" target="_blank"
-            title="夏季户外拓展训练注意事项 ">
-              夏季户外拓展训练注意事项
-            </a>
+            <a href="<?php echo $data['position_data'][4][$i]['url']; ?>" target="_blank" title="<?php echo $data['position_data'][4][$i]['description']; ?> "><?php echo $data['position_data'][4][$i]['title']; ?></a>
           </li>
-          <li>
-            <a href="#" target="_blank"
-            title="夏季户外拓展训练注意事项 ">
-              夏季户外拓展训练注意事项
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank"
-            title="拓展训练的六个环节 ">
-              拓展训练的六个环节
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank"
-            title="中国石油拉美公司员工举行拓展培训 ">
-              中国石油拉美公司员工举行拓展培训
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank"
-            title="“树上探险”户外拓展介绍 ">
-              “树上探险”户外拓展介绍
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank"
-            title="坐式安全带安全使用图解 ">
-              坐式安全带安全使用图解
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank"
-            title="拓展训练器材的使用与维护 ">
-              拓展训练器材的使用与维护
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank"
-            title="秋意浓！拓展培训正当时！ ">
-              秋意浓！拓展培训正当时！
-            </a>
-          </li>
+        <?php
+            }
+        ?>
         </ul>
       </div>
     </div>
     <div class="cbox">
       <div class="hot">
         <h3>
-          <em>
-            热门课程推荐
-          </em>
-          <a class="more" href="/training_courses/" target="_blank">
-            更多&gt;&gt;
-          </a>
+          <em><?php echo $data['position'][5]['title']; ?></em>
+          <a class="more" href="<?php echo $data['position'][5]['url']; ?>" alt="<?php echo $data['position'][5]['description']; ?>" target="_blank">更多&gt;&gt;</a>
         </h3>
         <div class="list">
+        <?php
+            $count = min(count($data['position_data'][5]), 6);
+            for($i=0; $i<$count; $i++){
+        ?>
           <div class="item">
             <div class="left">
-              <a href="#"><img src="./index_files/2012081515807875241903.jpg" /></a>
+              <a href="<?php echo $data['position_data'][5][$i]['url']; ?>"><img src="<?php echo $data['position_data'][5][$i]['thumbnail']; ?>" /></a>
             </div>
             <div class="right">
-              <h5><a href="#">野外培训</a></h5>
-              <span>enter text...</span>
+              <h5><a href="<?php echo $data['position_data'][5][$i]['url']; ?>"><?php echo $data['position_data'][5][$i]['title']; ?></a></h5>
+              <span><?php echo $data['position_data'][5][$i]['description']; ?></span>
             </div>
           </div>
-          <div class="item">
-            <div class="left">
-              <a href="#"><img src="./index_files/2012081515807875241903.jpg" /></a>
-            </div>
-            <div class="right">
-              <h5><a href="#">野外培训</a></h5>
-              <span>enter text...</span>
-            </div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <a href="#">
-                <img src="./index_files/2012081515807875241903.jpg" />
-              </a>
-            </div>
-            <div class="right">
-              <h5>
-                <a href="#">
-                  野外培训
-                </a>
-              </h5>
-              <span>
-                enter text...
-              </span>
-            </div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <a href="#">
-                <img src="./index_files/2012081515807875241903.jpg" />
-              </a>
-            </div>
-            <div class="right">
-              <h5>
-                <a href="#">
-                  野外培训
-                </a>
-              </h5>
-              <span>
-                enter text...
-              </span>
-            </div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <a href="#">
-                <img src="./index_files/2012081515807875241903.jpg" />
-              </a>
-            </div>
-            <div class="right">
-              <h5>
-                <a href="#">
-                  野外培训
-                </a>
-              </h5>
-              <span>
-                enter text...
-              </span>
-            </div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <a href="#">
-                <img src="./index_files/2012081515807875241903.jpg" />
-              </a>
-            </div>
-            <div class="right">
-              <h5>
-                <a href="#">
-                  野外培训
-                </a>
-              </h5>
-              <span>
-                enter text...
-              </span>
-            </div>
-          </div>
+        <?php
+            }
+        ?>
         </div>
       </div>
     </div>
     <div class="cbox">
       <div class="teacher">
+        <?php
+            $count = min(count($data['position_data'][6]), 1);
+            for($i=0; $i<$count; $i++){
+        ?>
         <div class="left">
-          <a href="#">
-            <img src="./index_files/2012081515807875241903.jpg" />
-          </a>
+          <a href="<?php echo $data['position_data'][6][$i]['url']; ?>"><img src="<?php echo $data['position_data'][6][$i]['thumbnail']; ?>" /></a>
         </div>
         <div class="right">
           <h5>
-            <a href="#">
-              师资团队
-            </a>
+            <a href="<?php echo $data['position_data'][6][$i]['url']; ?>"><?php echo $data['position_data'][6][$i]['title']; ?></a>
           </h5>
-          <span>
-            enter text...
-          </span>
+          <span><?php echo $data['position_data'][6][$i]['description']; ?></span>
         </div>
+        <?php
+            }
+        ?>
       </div>
       <div class="others">
         <div id="demo">
           <div id="indemo">
             <div id="demo1">
-              <a href="#">
-                <img src="./index_files/2012091491442368877217.jpg" border="0" />
+            <?php
+                $count = min(count($data['position_data'][7]), 10);
+                for($i=0; $i<$count; $i++){
+            ?>
+              <a href="<?php echo $data['position_data'][7][$i]['url']; ?>">
+                <img src="<?php echo $data['position_data'][7][$i]['thumbnail']; ?>" alt="<?php echo $data['position_data'][6][$i]['title']; ?>" border="0" />
               </a>
-              <a href="#">
-                <img src="./index_files/2012092890824581342929.jpg" border="0" />
-              </a>
-              <a href="#">
-                <img src="./index_files/2012091491442368877217.jpg" border="0" />
-              </a>
-              <a href="#">
-                <img src="./index_files/2012092890824581342929.jpg" border="0" />
-              </a>
-              <a href="#">
-                <img src="./index_files/2012091491442368877217.jpg" border="0" />
-              </a>
-              <a href="#">
-                <img src="./index_files/2012092890824581342929.jpg" border="0" />
-              </a>
+            <?php
+                }
+            ?>
             </div>
             <div id="demo2">
             </div>
@@ -395,12 +261,16 @@
     </div>
     <div class="cbox">
       <div class="link">
-                <b>友情链接：</b>
-                <a href="#" target="_blank">汕头婚纱摄影</a> | 
-		<a href="#" target="_blank">高新材料</a> |
-                <a href="#" target="_blank">运动器材</a> |
-                <a href="#" target="_blank">拓展器材</a>|
-                <a href="#" target="_blank">中国体育设施网</a>
+          <b>友情链接：</b>
+            <?php
+                $count = count($data['friend_link']);
+                for($i=0; $i<$count; $i++){
+            ?>
+          <a href="<?php echo $data['friend_link'][$i]['url']; ?>" target="_blank"><?php echo $data['friend_link'][$i]['name']; ?></a> | 
+            <?php
+                }
+            ?>
+          <a href="http://www.qiyehui.com.cn/" target="_blank">企业汇</a>
       </div>
     </div>
     <script type="text/javascript">

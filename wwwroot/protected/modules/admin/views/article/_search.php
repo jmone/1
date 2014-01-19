@@ -27,6 +27,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'image_path'); ?>
+		<?php echo $form->textField($model,'image_path',array('size'=>60,'maxlength'=>300)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'description'); ?>
 		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>200)); ?>
 	</div>

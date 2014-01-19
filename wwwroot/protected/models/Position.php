@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'position':
  * @property integer $id
  * @property integer $site_id
+ * @property string $name
  * @property string $title
  * @property string $description
  * @property string $thumbnail
@@ -30,14 +31,14 @@ class Position extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('site_id, title, dateline', 'required'),
+			array('site_id, name, title, dateline', 'required'),
 			array('site_id, dateline', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>100),
+			array('name, title', 'length', 'max'=>100),
 			array('description, thumbnail', 'length', 'max'=>300),
 			array('url', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, site_id, title, description, thumbnail, url, dateline', 'safe', 'on'=>'search'),
+			array('id, site_id, name, title, description, thumbnail, url, dateline', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +61,7 @@ class Position extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'site_id' => 'Site',
+			'name' => 'Name',
 			'title' => 'Title',
 			'description' => 'Description',
 			'thumbnail' => 'Thumbnail',
@@ -88,6 +90,7 @@ class Position extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('site_id',$this->site_id);
+		$criteria->compare('name',$this->name,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('thumbnail',$this->thumbnail,true);

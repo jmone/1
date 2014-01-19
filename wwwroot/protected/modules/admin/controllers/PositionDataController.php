@@ -79,8 +79,8 @@ class PositionDataController extends RController
             }
 		}
 
-        $positionId = intval(Yii::app()->request->getParam('position_id'));
-        $model->setAttribute('position_id', $positionId);
+        //$positionId = intval(Yii::app()->request->getParam('position_id'));
+        //$model->setAttribute('position_id', $positionId);
         
 		$this->render('update',array(
 			'model'=>$model,

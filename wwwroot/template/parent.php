@@ -204,6 +204,8 @@
 			<div class="time">发表日期：2014年12月31日</div>
 		</div>
 		<div class="more"><a href="./list.php" target="_blank">更多"登山"相关内容...</a></div>
+	</div>
+	<div class="parent_category_2">
 		<div class="item">
 			<div class="image"><a href="#" target="_blank"><img src="./images/list_2.jpg" width="200" heigh="160" /></a></div>
 			<div class="title"><a href="#" href="_blank">2000米高空跳伞</a></div>
