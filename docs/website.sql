@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 01 月 06 日 00:05
+-- 生成日期: 2014 年 01 月 19 日 11:37
 -- 服务器版本: 5.5.28
--- PHP 版本: 5.3.17
+-- PHP 版本: 5.5.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,14 +31,15 @@ CREATE TABLE IF NOT EXISTS `activity` (
   `name` char(30) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 关闭； 1 开启； 2 删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `activity`
 --
 
 INSERT INTO `activity` (`id`, `name`, `status`) VALUES
-(1, '2013年第三届年终爆米花盛典', 1);
+(1, '2013年第三届年终爆米花盛典', 1),
+(2, '2013年终爆米花盛典2', 2);
 
 -- --------------------------------------------------------
 
@@ -1006,15 +1007,44 @@ INSERT INTO `apply` (`id`, `activity_id`, `code`, `uid`, `miid`, `nickname`, `ph
 
 CREATE TABLE IF NOT EXISTS `article` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `site_id` int(10) NOT NULL,
+  `category_id` int(10) NOT NULL,
   `title` varchar(30) NOT NULL,
+  `image_path` varchar(300) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
   `content` text NOT NULL,
+  `position` varchar(300) DEFAULT NULL COMMENT '推荐位id，多个之间以,分割',
   `dateline` int(10) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `uid` (`site_id`),
-  KEY `site_id` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章' AUTO_INCREMENT=1 ;
+  KEY `uid` (`category_id`),
+  KEY `site_id` (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='文章' AUTO_INCREMENT=23 ;
+
+--
+-- 转存表中的数据 `article`
+--
+
+INSERT INTO `article` (`id`, `category_id`, `title`, `image_path`, `description`, `content`, `position`, `dateline`) VALUES
+(1, 7, 'PHP如何操作MySQL？', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
+(3, 7, 'PHP如何操作SQLite', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644),
+(4, 7, 'PHP如何操作Memcache', NULL, '', '请自行百度', '', 1389876644),
+(5, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', '', 1389876644),
+(6, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', '', 1389876644),
+(7, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', '', 1389876644),
+(8, 7, 'PHP如何操作SQLite', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
+(9, 8, 'PHP如何操作SQLite 1', NULL, '', '请自行百度', '', 1389876644),
+(10, 8, 'PHP如何操作SQLite 2', NULL, '', '请自行百度', '', 1389876644),
+(11, 8, 'PHP如何操作SQLite 3', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644),
+(12, 8, 'PHP如何操作SQLite 4', NULL, '', '请自行百度', '', 1389876644),
+(13, 8, 'PHP如何操作SQLite 5', NULL, '', '请自行百度', '', 1389876644),
+(14, 8, 'PHP如何操作SQLite 6', NULL, '', '请自行百度', '', 1389876644),
+(15, 8, 'PHP如何操作SQLite 7', NULL, '', '请自行百度', '', 1389876644),
+(16, 9, 'PHP如何操作Access 1', NULL, '', '请自行百度', '', 1389876644),
+(17, 9, 'PHP如何操作Access 2', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
+(18, 9, 'PHP如何操作Access 3', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644),
+(19, 9, 'PHP如何操作Access 4', 'http://hipeak.qiyehui.com.cn/template/images/list_4.jpg', '', '请自行百度', '', 1389876644),
+(20, 9, 'PHP如何操作Access 5', 'http://hipeak.qiyehui.com.cn/template/images/list_2.jpg', '', '请自行百度', '', 1389876644),
+(21, 9, 'PHP如何操作Access 6', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
+(22, 9, 'PHP如何操作Access 7', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644);
 
 -- --------------------------------------------------------
 
@@ -1030,7 +1060,52 @@ CREATE TABLE IF NOT EXISTS `article_category` (
   `description` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `site_id` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- 转存表中的数据 `article_category`
+--
+
+INSERT INTO `article_category` (`id`, `site_id`, `parent_id`, `name`, `description`) VALUES
+(1, 1, 0, '野外培训', '激发学员生存、求生意识，学员通过该培训可激发出对生活、对企业的更进一步激情。'),
+(2, 1, 0, '产品介绍3', ''),
+(5, 2, 0, '小米活动', ''),
+(7, 1, 1, '野外求生', '激发学员生存、求生意识，学员通过该培训可激发出对生活、对企业的更进一步激情。'),
+(8, 1, 1, '野外穿越', '激发学员生存、求生意识，学员通过该培训可激发出对生活、对企业的更进一步激情。'),
+(9, 1, 1, '荒野生存', '激发学员生存、求生意识，学员通过该培训可激发出对生活、对企业的更进一步激情。');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `article_category_slide`
+--
+
+CREATE TABLE IF NOT EXISTS `article_category_slide` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `category_id` int(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `image_path` varchar(300) NOT NULL,
+  `url` varchar(300) NOT NULL,
+  `order_count` int(10) NOT NULL DEFAULT '999',
+  `dateline` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 转存表中的数据 `article_category_slide`
+--
+
+INSERT INTO `article_category_slide` (`id`, `category_id`, `title`, `image_path`, `url`, `order_count`, `dateline`) VALUES
+(1, 2, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(3, 3, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(4, 1, '野外生存', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(5, 1, '野外生存', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(6, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(7, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(8, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(9, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(10, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644);
 
 -- --------------------------------------------------------
 
@@ -1193,7 +1268,70 @@ CREATE TABLE IF NOT EXISTS `friend_link` (
   `dateline` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `site_id` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='友情链接' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='友情链接' AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `friend_link`
+--
+
+INSERT INTO `friend_link` (`id`, `site_id`, `name`, `logo`, `url`, `order_num`, `dateline`) VALUES
+(1, 1, '鼎丰之旅', '', 'http://www.qiyehui.com.cn/', 0, 1389876644),
+(3, 1, '小米社区', '', 'http://www.xiaomi.cn/', 0, 1389876644);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `index_slide`
+--
+
+CREATE TABLE IF NOT EXISTS `index_slide` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `site_id` int(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `image_path` varchar(300) NOT NULL,
+  `url` varchar(300) NOT NULL,
+  `order_count` int(10) NOT NULL DEFAULT '999',
+  `dateline` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- 转存表中的数据 `index_slide`
+--
+
+INSERT INTO `index_slide` (`id`, `site_id`, `title`, `image_path`, `url`, `order_count`, `dateline`) VALUES
+(1, 1, '小米社区爆米花活动', 'http://static.xiaomi.cn/xiaomicms/uploadfile/2014/0114/20140114092101992.jpg', 'http://www.xiaomi.cn/index.html', 999, 1389876644),
+(9, 1, '小米社区爆米花活动', 'http://hipeak.qiyehui.com.cn/images/1.jpg', 'http://www.xiaomi.cn/index.html', 999, 1389876644),
+(10, 1, '小米社区爆米花活动3', 'http://hipeak.qiyehui.com.cn/images/2.jpg', 'http://www.xiaomi.cn/index.html', 999, 1389876644),
+(11, 1, '小米社区爆米花活动4', 'http://hipeak.qiyehui.com.cn/images/3.jpg', 'http://www.xiaomi.cn/index.html', 999, 1389876644),
+(12, 1, '小米社区爆米花活动5', 'http://hipeak.qiyehui.com.cn/images/4.jpg', 'http://www.xiaomi.cn/index.html', 999, 1389876644),
+(13, 1, '小米社区爆米花活动6', 'http://hipeak.qiyehui.com.cn/images/5.jpg', 'http://www.xiaomi.cn/index.html', 999, 1389876644);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `job`
+--
+
+CREATE TABLE IF NOT EXISTS `job` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `site_id` int(10) NOT NULL,
+  `name` varchar(20) NOT NULL COMMENT '职位名称',
+  `description` text NOT NULL COMMENT '职位要求简介等',
+  `count` int(10) NOT NULL COMMENT '招聘人数',
+  `expiration_date` int(10) NOT NULL COMMENT '截止时间',
+  `dateline` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='职位' AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `job`
+--
+
+INSERT INTO `job` (`id`, `site_id`, `name`, `description`, `count`, `expiration_date`, `dateline`) VALUES
+(2, 1, 'PHP研发工程师', '精通PHP+MySQL开发，熟悉linux环境', 2, 1389976644, 1389876644);
 
 -- --------------------------------------------------------
 
@@ -1217,20 +1355,110 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `navigation_link`
+--
+
+CREATE TABLE IF NOT EXISTS `navigation_link` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `site_id` int(10) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `url` varchar(300) NOT NULL,
+  `target` char(20) NOT NULL DEFAULT '_self',
+  `order_count` int(10) NOT NULL DEFAULT '20',
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 转存表中的数据 `navigation_link`
+--
+
+INSERT INTO `navigation_link` (`id`, `site_id`, `name`, `url`, `target`, `order_count`) VALUES
+(1, 1, '主页', 'http://www.baidu.com/', '_self', 20),
+(3, 1, '野外培训', 'http://www.baidu.com/', '_self', 20),
+(4, 1, '拓展培训', 'http://www.baidu.com/', '_self', 20),
+(5, 1, '趣味运动会', 'http://www.baidu.com/', '_self', 20),
+(6, 1, '会议服务', 'http://www.baidu.com/', '_self', 20),
+(7, 1, '户外运动', 'http://www.baidu.com/', '_self', 20),
+(8, 1, '新闻动态', 'http://www.baidu.com/', '_self', 20),
+(9, 1, '在线留言', 'http://www.baidu.com/', '_self', 20),
+(10, 1, '联系我们', 'http://www.baidu.com/', '_self', 20);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `position`
 --
 
 CREATE TABLE IF NOT EXISTS `position` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `site_id` int(10) NOT NULL,
-  `name` varchar(20) NOT NULL COMMENT '职位名称',
-  `description` text NOT NULL COMMENT '职位要求简介等',
-  `count` int(10) NOT NULL COMMENT '招聘人数',
-  `expiration_date` int(10) NOT NULL COMMENT '截止时间',
+  `name` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(300) DEFAULT NULL,
+  `thumbnail` varchar(300) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
   `dateline` int(10) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `uid` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='职位' AUTO_INCREMENT=1 ;
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='推荐位' AUTO_INCREMENT=8 ;
+
+--
+-- 转存表中的数据 `position`
+--
+
+INSERT INTO `position` (`id`, `site_id`, `name`, `title`, `description`, `thumbnail`, `url`, `dateline`) VALUES
+(1, 1, '首页_公司简介', '公司简介', '', '', '', 1389970200),
+(2, 1, '首页_联系我们', '联系我们', '', '', '', 1389970200),
+(3, 1, '首页_业务简介', '业务简介', '', '', '', 1389970200),
+(4, 1, '首页_拓展知识', '拓展知识', '', '', '', 1389970200),
+(5, 1, '首页_热门课程推荐', '热门课程推荐', '热门精品课程推荐', '', 'http://www.baidu.com/', 1389970200),
+(6, 1, '首页_师资团队', '师资团队', '师资团队', '', 'http://www.baidu.com/', 1389970200),
+(7, 1, '首页_滚动图文资讯', '图文资讯', '', '', '', 1389970200);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `position_data`
+--
+
+CREATE TABLE IF NOT EXISTS `position_data` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `position_id` int(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `keywords` varchar(200) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL,
+  `content` text,
+  `url` varchar(200) NOT NULL,
+  `thumbnail` varchar(200) DEFAULT NULL,
+  `order_count` int(10) NOT NULL DEFAULT '999',
+  `click_count` int(10) NOT NULL DEFAULT '0',
+  `dateline` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `position_id` (`position_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+
+--
+-- 转存表中的数据 `position_data`
+--
+
+INSERT INTO `position_data` (`id`, `position_id`, `title`, `keywords`, `description`, `content`, `url`, `thumbnail`, `order_count`, `click_count`, `dateline`) VALUES
+(1, 1, '公司简介', '', '', '北京鼎丰之旅拓展培训成立于2000年,是北京最早也是最优秀的拓展培训机构之一.我们利用自身的极限运动技术优势与丰富的长线特色大型活动经验，联合专业的体验式管理顾问人才，结合中国国情及国际先进团队训练方法开发了“互动体验式”野外训练课程，有一系列“激发潜能，熔炼团队”的拓展项目。我们致力于成为培育高素质员工，熔炼高绩效团队的平台，并充分体验大自然付与人类的秀丽风景。', 'http://www.hipeak.com.cn/', '', 999, 0, 1389970200),
+(2, 2, '联系我们', '', '', '北京鼎丰之旅文化发展有限公司<br />\r\n地址：北京市海淀区金源商务中心A座17F<br />\r\n邮编：10089<br />\r\n电话：(010)82398588<br />\r\n传真：(010)82398589<br />\r\n网址：www.hipeak.com.cn<br />\r\nwww.hipeakty.com', 'http://www.hipeak.com.cn/', '', 999, 0, 1389970200),
+(3, 3, '业务简介', '', '', '<img src="./index_files/03.jpg">\r\n              &nbsp;&nbsp;&nbsp;&nbsp;江西探索户外运动发展有限公司是目前江西体验式培训公司之一，致力于为国内外企业提供具有现代管理观念与技能的高级培训课程。诺贝乐经济学奖获得者，美国著名教授舒尔茨曾说过：“投在人脑中的钱比投在机器的能够赚更多的钱。投资于人力资本比投资于物质资本能够产生更持久的效益。”这个结论早被二十世纪经济发展所证明。在全球随着经济一体化的进程，越来越多企业开始重视对人才的培养，把对人力资本的投入作为提升企业竞争力的重要途径。在摩托罗拉公司，每投入一美...\r\n              <a href="#" target="_blank">\r\n                详细&gt;&gt;\r\n              </a>', 'http://www.hipeak.com.cn/', '', 999, 0, 1389970200),
+(4, 4, '夏季户外拓展训练注意事项', '', '夏季户外拓展训练注意事项', '夏季户外拓展训练注意事项', 'http://www.hipeak.com.cn/', '', 999, 0, 1389970200),
+(5, 4, '拓展训练的六个环节', '', '拓展训练的六个环节', '', 'http://www.hipeak.com.cn/', '', 999, 0, 1389970200),
+(6, 5, '野外培训', '', '塑造团队协作精神，相互帮助，帮助团队成长。', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(7, 5, '拓展培训', '', '北京鼎丰之旅拓展培训，北京鼎丰之旅拓展培训，北京鼎丰之旅拓展', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(8, 5, '趣味运动会', '', '趣味运动会，趣味运动会，趣味运动会，趣味运动会，趣味运动会', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(9, 5, '会议服务', '', '北京鼎丰之旅拓展培训，北京鼎丰之旅拓展培训，北京鼎丰之旅拓展', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(10, 5, '户外运动', '', '户外运动项目', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(11, 5, '极限运动', '', '极限运动', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(13, 6, '师资团队', '', '鼎丰之旅是一家拥有一流师资力量的企业，固定教练300名...', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200),
+(14, 7, '户外运动', '', '塑造团队协作精神，相互帮助，帮助团队成长。', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012092890824581342929.jpg', 999, 0, 1389970200),
+(15, 7, '公司简介', '', '塑造团队协作精神，相互帮助，帮助团队成长。', '', 'http://www.hipeak.com.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012091491442368877217.jpg', 999, 0, 1389970200),
+(16, 7, '公司简介', '', '塑造团队协作精神，相互帮助，帮助团队成长。', '', 'http://www.xiaomi.cn', 'http://hipeak.qiyehui.com.cn/index_files/2012091491442368877217.jpg', 999, 0, 1389970200),
+(17, 7, '拓展培训', '', '', '', 'http://www.xiaomi.cn/', 'http://hipeak.qiyehui.com.cn/index_files/2012081515807875241903.jpg', 999, 0, 1389970200);
 
 -- --------------------------------------------------------
 
@@ -1313,7 +1541,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `type`, `username`, `email`, `password`, `dateline`, `profile`) VALUES
-(1, '1', '', 'jmone2006@126.com', '32100321', 1374760391, NULL);
+(1, '1', 'admin', 'jmone2006@126.com', '32100321', 1374760391, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
