@@ -29,11 +29,15 @@
 	<?php echo CHtml::encode($data->content); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('view_count')); ?>:</b>
+	<?php echo CHtml::encode($data->view_count); ?>
+	<br />
+
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('position')); ?>:</b>
 	<?php echo CHtml::encode($data->position); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dateline')); ?>:</b>
 	<?php echo CHtml::encode($data->dateline); ?>
 	<br />

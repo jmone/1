@@ -124,20 +124,87 @@ class IndexController extends Controller
 	public function actionList(){
         $id = intval(Yii::app()->request->getParam('id'));
         //获取该分类的信息
+        $this->data['current_category'] = $current_category = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('article_category')
+                ->where('id = :id AND site_id = :siteid', array(
+                    ':siteid' => $this->siteid,
+                    ':id' => $id,
+                ))->queryRow();
+        if(empty($current_category)){
+            echo 'This category not exists!';
+            Yii::app()->end();
+        }
+        
+        //获取该分类平行分类及上级分类
         $this->data['category'] = Yii::app()->db->createCommand()
                 ->select('*')
-                ->from('index_slide')
-                ->where('site_id = :siteid', array(
+                ->from('article_category')
+                ->where('site_id = :siteid and (id =:id or parent_id = :id)', array(
                     ':siteid' => $this->siteid,
+                    ':id' => $current_category['parent_id'],
                 ))->queryAll();
-        //获取该分类平行分类及上级分类
+        
         //获取该分类下的文章
+        $page = intval(Yii::app()->request->getParam('page'));
+        $this->data['article'] = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('article')
+                ->where('category_id = :categoryId', array(
+                    ':categoryId' => $id,
+                ))->order('id DESC')->limit(10)->queryAll();
+        
+        //获取分类推荐幻灯图
+        $this->data['article_category_slide'] = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('article_category_slide')
+                ->where('category_id = :id', array(
+                    ':id' => $id,
+                ))->order('id DESC')->limit(6)->queryAll();
+        
 		$this->render('/hipeak/list', array(
             'data' => $this->data,
         ));
 	}
     
 	public function actionArticle(){
+        $id = intval(Yii::app()->request->getParam('id'));
+        //获取文章信息
+        $this->data['article'] = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('article')
+                ->where('id = :id', array(
+                    ':id' => $id,
+                ))->queryRow();
+        if(empty($this->data['article'])){
+            echo 'This article not exists!';
+            Yii::app()->end();
+        }
+        
+        //获取该分类的信息
+        $this->data['current_category'] = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('article_category')
+                ->where('id = :id AND site_id = :siteid', array(
+                    ':siteid' => $this->siteid,
+                    ':id' => $this->data['article']['category_id'],
+                ))->queryRow();
+        
+        //获取该分类平行分类及上级分类
+        $this->data['category'] = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('article_category')
+                ->where('site_id = :siteid and (id =:id or parent_id = :id)', array(
+                    ':siteid' => $this->siteid,
+                    ':id' => $this->data['current_category']['parent_id'],
+                ))->queryAll();
+        
+        //更新浏览次数
+        Yii::app()->db->createCommand()
+                ->update('article', array(
+                    'view_count' => new CDbExpression('view_count+1'),
+                ), 'id=:id', array(':id'=>$id));
+        
 		$this->render('/hipeak/article', array(
             'data' => $this->data,
         ));

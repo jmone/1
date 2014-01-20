@@ -42,6 +42,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'view_count'); ?>
+		<?php echo $form->textField($model,'view_count'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'position'); ?>
 		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>300)); ?>
 	</div>

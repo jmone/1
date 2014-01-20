@@ -60,7 +60,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 					'label'=>'推荐幻灯图',
 					//'icon' => 'thumbs-up',
                     'icon' => 'picture',
-					'url' => 'Yii::app()->createUrl("/admin/articleCategorySlide/create", array("category_id" => $data->id))',
+					'url' => 'Yii::app()->createUrl("/admin/articleCategorySlide/admin", array("category_id" => $data->id))',
 					'options' => array('class'=>'sendone'),
 				),
 				'update'=>array(

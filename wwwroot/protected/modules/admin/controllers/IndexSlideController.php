@@ -1,48 +1,39 @@
 <?php
 
-class IndexSlideController extends Controller
+class IndexSlideController extends RController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='/layouts/column2';
+	private $siteid = 0;
+    private $uid = 0;
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
+	//Rights 接管权限管理 Begin
+	public function filters(){
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			'rights',
 		);
 	}
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+	public function init(){
+		parent::init();
+		$this->siteid = intval($_GET['siteid']);
+		//判断该站点是否属于该用户
+		$this->uid = intval(Yii::app()->user->getId());
+        $data = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('site')
+                ->where('id=:siteid AND uid=:uid', array(
+                    ':siteid' =>  $this->siteid,
+                    ':uid' => $this->uid,
+                ))->queryRow();
+        if(empty($data)){
+            //exit('Access Denied');
+        }
+        
+		$this->menu = require 'setting_menu.php';
 	}
 
 	/**

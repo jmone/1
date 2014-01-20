@@ -8,7 +8,7 @@ return array(
     'friend_link' => array('label' => '友情链接', 'icon' => 'icon-hand-up', 'url' => array('/admin/setting/friendLink/siteid/'.$this->siteid)),
     'job' => array('label' => '招聘管理', 'icon' => 'icon-star', 'url' => array('/admin/setting/job/siteid/'.$this->siteid)),
     'index_slide' => array('label' => '首页幻灯片', 'icon' => 'icon-picture', 'url' => array('/admin/setting/indexSlide/siteid/'.$this->siteid)),
-    'navigation_link' => array('label' => '导航链接', 'icon' => 'icon-fire', 'url' => array('/admin/setting/navigationLink/siteid/'.$this->siteid)),
+    'navigation_link' => array('label' => '导航链接', 'icon' => 'icon-fire', 'url' => array('/admin/navigationLink/admin/siteid/'.$this->siteid)),
     'position' => array('label' => '推荐位管理', 'icon' => 'icon-random', 'url' => array('/admin/position/admin/siteid/'.$this->siteid)),
 );
 ?>
