@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 01 月 19 日 11:37
+-- 生成日期: 2014 年 02 月 08 日 12:10
 -- 服务器版本: 5.5.28
 -- PHP 版本: 5.5.7
 
@@ -1012,6 +1012,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `image_path` varchar(300) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
   `content` text NOT NULL,
+  `view_count` int(10) NOT NULL DEFAULT '1',
   `position` varchar(300) DEFAULT NULL COMMENT '推荐位id，多个之间以,分割',
   `dateline` int(10) NOT NULL,
   PRIMARY KEY (`id`),
@@ -1023,28 +1024,27 @@ CREATE TABLE IF NOT EXISTS `article` (
 -- 转存表中的数据 `article`
 --
 
-INSERT INTO `article` (`id`, `category_id`, `title`, `image_path`, `description`, `content`, `position`, `dateline`) VALUES
-(1, 7, 'PHP如何操作MySQL？', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
-(3, 7, 'PHP如何操作SQLite', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644),
-(4, 7, 'PHP如何操作Memcache', NULL, '', '请自行百度', '', 1389876644),
-(5, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', '', 1389876644),
-(6, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', '', 1389876644),
-(7, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', '', 1389876644),
-(8, 7, 'PHP如何操作SQLite', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
-(9, 8, 'PHP如何操作SQLite 1', NULL, '', '请自行百度', '', 1389876644),
-(10, 8, 'PHP如何操作SQLite 2', NULL, '', '请自行百度', '', 1389876644),
-(11, 8, 'PHP如何操作SQLite 3', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644),
-(12, 8, 'PHP如何操作SQLite 4', NULL, '', '请自行百度', '', 1389876644),
-(13, 8, 'PHP如何操作SQLite 5', NULL, '', '请自行百度', '', 1389876644),
-(14, 8, 'PHP如何操作SQLite 6', NULL, '', '请自行百度', '', 1389876644),
-(15, 8, 'PHP如何操作SQLite 7', NULL, '', '请自行百度', '', 1389876644),
-(16, 9, 'PHP如何操作Access 1', NULL, '', '请自行百度', '', 1389876644),
-(17, 9, 'PHP如何操作Access 2', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
-(18, 9, 'PHP如何操作Access 3', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644),
-(19, 9, 'PHP如何操作Access 4', 'http://hipeak.qiyehui.com.cn/template/images/list_4.jpg', '', '请自行百度', '', 1389876644),
-(20, 9, 'PHP如何操作Access 5', 'http://hipeak.qiyehui.com.cn/template/images/list_2.jpg', '', '请自行百度', '', 1389876644),
-(21, 9, 'PHP如何操作Access 6', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', '', 1389876644),
-(22, 9, 'PHP如何操作Access 7', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', '', 1389876644);
+INSERT INTO `article` (`id`, `category_id`, `title`, `image_path`, `description`, `content`, `view_count`, `position`, `dateline`) VALUES
+(3, 7, 'PHP如何操作SQLite', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', 1, '', 1389876644),
+(4, 7, 'PHP如何操作Memcache', NULL, '', '请自行百度', 1, '', 1389876644),
+(5, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', 1, '', 1389876644),
+(6, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', 1, '', 1389876644),
+(7, 7, 'PHP如何操作SQLite', NULL, '', '请自行百度', 5, '', 1389876644),
+(8, 7, 'PHP如何操作SQLite', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', 18, '', 1389876644),
+(9, 8, 'PHP如何操作SQLite 1', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '本文将讲解PHP如何操作SQLite 1', '首页 野外培训 拓展培训 趣味运动会 会议服务 户外运动 关于我们 联系我们 登山 徒步 骑行 定向 滑雪 露营 漂流 速降\r\n起源发展\r\n户外运动的历史，最早可追溯到18世纪的欧洲。\r\n据史料记载，法国著名科学家德·索修尔为探索高山植物资源，渴望能有人帮他克服当时看来是不可\r\n\r\n勃朗峰\r\n勃朗峰\r\n逾越的险阻——登上阿尔卑斯山顶峰（在法国境内的勃朗峰，海拔4810米，是西欧的第一高峰）。他于1760年5月在阿尔卑斯山脚下的夏木尼镇贴出一则告示：“凡能登上或提供登上勃朗峰之巅线路者，将以重金奖赏。”直到26年后的1786年6月，夏木尼镇一位名叫巴卡罗的医生揭下了告示，他经过两个多月的准备，与当地山区水晶石采掘工人巴尔玛结伴，于8月6日首次登上了勃朗峰。\r\n1787年8月3日，由德·索修尔本人率领、巴尔玛做向导的一支20多人组成的登山队，再次登上了该峰，揭开了现代登山运动的序幕。在整个登山过程中，他们进行了有关人体生理、自然环境等多方面的考察，取得了许多高山科学的宝贵资料。后来，人们把登山运动称为“阿尔卑斯运动”，把1786年作为登山运动的诞生年，把阿尔卑斯山下的夏木尼镇作为登山运动的发源地，德·索修尔、巴尔玛等人则成为世界登山运动的创始人，并得到了国际登山界的公认。\r\n勃朗峰\r\n逾越的险阻——登上阿尔卑斯山顶峰（在法国境内的勃朗峰，海拔4810米，是西欧的第一高峰）。他于1760年5月在阿尔卑斯山脚下的夏木尼镇贴出一则告示：“凡能登上或提供登上勃朗峰之巅线路者，将以重金奖赏。”直到26年后的1786年6月，夏木尼镇一位名叫巴卡罗的医生揭下了告示，他经过两个多月的准备，与当地山区水晶石采掘工人巴尔玛结伴，于8月6日首次登上了勃朗峰。\r\n1787年8月3日，由德·索修尔本人率领、巴尔玛做向导的一支20多人组成的登山队，再次登上了该峰，揭开了现代登山运动的序幕。在整个登山过程中，他们进行了有关人体生理、自然环境等多方面的考察，取得了许多高山科学的宝贵资料。后来，人们把登山运动称为“阿尔卑斯运动”，把1786年作为登山运动的诞生年，把阿尔卑斯山下的夏木尼镇作为登山运动的发源地，德·索修尔、巴尔玛等人则成为世界登山运动的创始人，并得到了国际登山界的公认。\r\n勃朗峰\r\n逾越的险阻——登上阿尔卑斯山顶峰（在法国境内的勃朗峰，海拔4810米，是西欧的第一高峰）。他于1760年5月在阿尔卑斯山脚下的夏木尼镇贴出一则告示：“凡能登上或提供登上勃朗峰之巅线路者，将以重金奖赏。”直到26年后的1786年6月，夏木尼镇一位名叫巴卡罗的医生揭下了告示，他经过两个多月的准备，与当地山区水晶石采掘工人巴尔玛结伴，于8月6日首次登上了勃朗峰。\r\n1787年8月3日，由德·索修尔本人率领、巴尔玛做向导的一支20多人组成的登山队，再次登上了该峰，揭开了现代登山运动的序幕。在整个登山过程中，他们进行了有关人体生理、自然环境等多方面的考察，取得了许多高山科学的宝贵资料。后来，人们把登山运动称为“阿尔卑斯运动”，把1786年作为登山运动的诞生年，把阿尔卑斯山下的夏木尼镇作为登山运动的发源地，德·索修尔、巴尔玛等人则成为世界登山运动的创始人，并得到了国际登山界的公认。', 10, '', 1389876644),
+(10, 8, 'PHP如何操作SQLite 2', NULL, '', '请自行百度', 1, '', 1389876644),
+(11, 8, 'PHP如何操作SQLite 3', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', 1, '', 1389876644),
+(12, 8, 'PHP如何操作SQLite 4', NULL, '', '请自行百度', 1, '', 1389876644),
+(13, 8, 'PHP如何操作SQLite 5', NULL, '', '请自行百度', 86, '', 1389876644),
+(14, 8, 'PHP如何操作SQLite 6', NULL, '', '请自行百度', 2, '', 1389876644),
+(15, 8, 'PHP如何操作SQLite 7', NULL, '', '请自行百度', 2, '', 1389876644),
+(16, 9, 'PHP如何操作Access 1', NULL, '', '请自行百度', 2, '', 1389876644),
+(17, 9, 'PHP如何操作Access 2', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', 1, '', 1389876644),
+(18, 9, 'PHP如何操作Access 3', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', 1, '', 1389876644),
+(19, 9, 'PHP如何操作Access 4', 'http://hipeak.qiyehui.com.cn/template/images/list_4.jpg', '', '请自行百度', 2, '', 1389876644),
+(20, 9, 'PHP如何操作Access 5', 'http://hipeak.qiyehui.com.cn/template/images/list_2.jpg', '', '请自行百度', 1, '', 1389876644),
+(21, 9, 'PHP如何操作Access 6', 'http://hipeak.qiyehui.com.cn/template/images/list_1.jpg', '', '请自行百度', 8, '', 1389876644),
+(22, 9, 'PHP如何操作Access 7', 'http://hipeak.qiyehui.com.cn/template/images/list_3.jpg', '', '请自行百度', 1, '', 1389876644);
 
 -- --------------------------------------------------------
 
@@ -1090,7 +1090,7 @@ CREATE TABLE IF NOT EXISTS `article_category_slide` (
   `dateline` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `site_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `article_category_slide`
@@ -1105,7 +1105,8 @@ INSERT INTO `article_category_slide` (`id`, `category_id`, `title`, `image_path`
 (7, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
 (8, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
 (9, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
-(10, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644);
+(10, 7, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644),
+(11, 8, '小米社区爆米花年度盛典', 'http://zt.xiaomi.cn/bbszt/zj/gyz/jiaodiantu/20131217/4.jpg', 'http://pai.xiaomi.cn/view/pid/3151', 999, 1389876644);
 
 -- --------------------------------------------------------
 
