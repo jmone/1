@@ -4,6 +4,27 @@
             <meta charset="utf-8">
             <title><?php echo CHtml::encode($this->pageTitle); ?></title>
             <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/r_yii.css">
+                <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl;?>/kindeditor/themes/default/default.css" />
+                <script src="<?php echo Yii::app()->request->baseUrl;?>/kindeditor/kindeditor.js"></script>
+                <script src="<?php echo Yii::app()->request->baseUrl;?>/kindeditor/lang/zh_CN.js"></script>
+                <script>
+                        KindEditor.ready(function(K) {
+                                var editor = K.editor({
+                                        allowFileManager : true
+                                });
+                                K('#image1').click(function() {
+                                        editor.loadPlugin('image', function() {
+                                                editor.plugin.imageDialog({
+                                                        imageUrl : K('#Article_image_path').val(),
+                                                        clickFn : function(url, title, width, height, border, align) {
+                                                                K('#Article_image_path').val(url);
+                                                                editor.hideDialog();
+                                                        }
+                                                });
+                                        });
+                                });
+                        });
+                </script>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="">
             <meta name="author" content="">

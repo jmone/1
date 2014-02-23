@@ -3,6 +3,14 @@
 /* @var $model Article */
 /* @var $form CActiveForm */
 ?>
+                <script>
+                        var editor;
+                        KindEditor.ready(function(K) {
+                                editor = K.create('textarea[id="Article_content"]', {
+                                        allowFileManager : true
+                                });
+                        });
+                </script>
 
 <div class="form">
 
@@ -35,19 +43,20 @@
 		<?php echo $form->labelEx($model,'image_path'); ?>
 		<?php echo $form->textField($model,'image_path',array('size'=>60,'maxlength'=>300)); ?>
 		<?php echo $form->error($model,'image_path'); ?>
-	</div>
+                <input type="button" id="image1" value="选择图片" />
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'description'); ?>
-	</div>
+        <div class="row">
+                <?php echo $form->labelEx($model,'description'); ?>
+                <?php echo $form->textArea($model,'description',array('style'=>'width:800px;height:50px;', 'maxlength'=>200)); ?>
+                <?php echo $form->error($model,'description'); ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'content'); ?>
-	</div>
+        <div class="row">
+                <?php echo $form->labelEx($model,'content'); ?>
+                <?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50, 'style'=>'width:800px;height:400px;visibility:hidden;')); ?>
+                <?php echo $form->error($model,'content'); ?>
+        </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'view_count'); ?>
