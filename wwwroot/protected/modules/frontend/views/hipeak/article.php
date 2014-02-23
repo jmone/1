@@ -53,7 +53,17 @@
         $count = count($data['category']);
         for($i=0; $i<$count; $i++){
         ?>
-          <li<?php if($data['category'][$i]['id'] == $data['current_category']['id']){echo ' class="now_li"';} ?>><a href="<?php echo $data['category'][$i]['id']; ?>"><?php echo $data['category'][$i]['name']; ?></a></li>
+        <?php 
+        if($data['category'][$i]['parent_id'] == 0){
+        ?>
+          <li<?php if($data['category'][$i]['id'] == Yii::app()->request->getParam('id')){echo ' class="now_li"';} ?>><a href="/frontend/index/parent/id/<?php echo $data['category'][$i]['id']; ?>"><strong><?php echo $data['category'][$i]['name']; ?></strong></a></li>
+        <?php
+        }else{
+        ?>
+          <li<?php if($data['category'][$i]['id'] == Yii::app()->request->getParam('id')){echo ' class="now_li"';} ?>><a href="/frontend/index/list/id/<?php echo $data['category'][$i]['id']; ?>"><?php echo $data['category'][$i]['name']; ?></a></li>
+        <?php
+        }
+        ?>
         <?php
         }
         ?>
