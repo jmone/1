@@ -35,11 +35,11 @@
       </div>
       <div class="c_20"></div>
       <div class="nav">
-        <?php
+       <?php
         $count = count($data['navigation_link']);
         for($i=0; $i<$count; $i++){
        ?>
-          <a href="<?php echo $data['navigation_link'][$i]['url']; ?>" target="_blank"><?php echo $data['navigation_link'][$i]['name']; ?></a>
+          <a href="<?php echo $data['navigation_link'][$i]['url']; ?>" target="<?php echo $data['navigation_link'][$i]['target']; ?>"><?php echo $data['navigation_link'][$i]['name']; ?></a>
        <?php
        }
        ?>

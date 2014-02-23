@@ -36,7 +36,7 @@
         $count = count($data['navigation_link']);
         for($i=0; $i<$count; $i++){
         ?>
-          <a href="<?php echo $data['navigation_link'][$i]['url']; ?>" target="_blank"><?php echo $data['navigation_link'][$i]['name']; ?></a>
+          <a href="<?php echo $data['navigation_link'][$i]['url']; ?>" target="<?php echo $data['navigation_link'][$i]['target']; ?>"><?php echo $data['navigation_link'][$i]['name']; ?></a>
         <?php
         }
         ?>
@@ -53,7 +53,7 @@
         $count = count($data['article_category']['subcategory']);
         for($i=0; $i<$count; $i++){
         ?>
-          <li><a href="<?php echo $data['article_category']['subcategory'][$i]['id']; ?>"><?php echo $data['article_category']['subcategory'][$i]['name']; ?></a></li>
+          <li><a href="/frontend/index/list/id/<?php echo $data['article_category']['subcategory'][$i]['id']; ?>"><?php echo $data['article_category']['subcategory'][$i]['name']; ?></a></li>
         <?php
         }
         ?>
@@ -147,13 +147,13 @@
         for($j=0; $j<count($articles) && $j <4; $j++){
         ?>
 		<div class="item">
-			<div class="left"><a href="<?php echo $articles[$j]['id'];?>" target="_blank"><img src="<?php echo $articles[$j]['image_path'];?>" width="229" height="134" /></a></div>
-			<div class="right"><a href="<?php echo $articles[$j]['id'];?>" target="_blank"><?php echo $articles[$j]['title'];?></a><br /><?php echo $articles[$j]['description'];?></div>
+			<div class="left"><a href="/frontend/index/article/id/<?php echo $articles[$j]['id'];?>" target="_blank"><img src="<?php echo $articles[$j]['image_path'];?>" width="229" height="134" /></a></div>
+			<div class="right"><a href="/frontend/index/article/id/<?php echo $articles[$j]['id'];?>" target="_blank"><?php echo $articles[$j]['title'];?></a><br /><?php echo $articles[$j]['description'];?></div>
 		</div>
         <?php
         }
         ?>
-		<div class="item_more"><a href="<?php echo $data['article_category']['subcategory'][$i]['id'];?>">点击查看更多</a></div>
+		<div class="item_more"><a href="/frontend/index/list/id/<?php echo $data['article_category']['subcategory'][$i]['id'];?>">点击查看更多</a></div>
 	</div>
     <?php
     }
@@ -166,15 +166,15 @@
         for($j=0; $j<count($articles) && $j <6; $j++){
         ?>
         <div class="item<?php if(($j+1)%3==0){echo ' item_last';} ?>">
-			<div class="image"><a href="<?php echo $articles[$j]['id'];?>" target="_blank"><img src="<?php echo $articles[$j]['image_path'];?>" width="200" heigh="160" /></a></div>
-			<div class="title"><a href="<?php echo $articles[$j]['id'];?>" target="_blank"><?php echo $articles[$j]['title'];?></a></div>
+			<div class="image"><a href="/frontend/index/article/id/<?php echo $articles[$j]['id'];?>" target="_blank"><img src="<?php echo $articles[$j]['image_path'];?>" width="200" heigh="160" /></a></div>
+			<div class="title"><a href="/frontend/index/article/id/<?php echo $articles[$j]['id'];?>" target="_blank"><?php echo $articles[$j]['title'];?></a></div>
 			<div class="description"><?php echo $articles[$j]['description'];?></div>
 			<div class="time">发表日期：<?php echo date('Y年m月d日', $articles[$j]['dateline']);?></div>
 		</div>
         <?php
         }
         ?>
-		<div class="more"><a href="./list.php?<?php echo $data['article_category']['subcategory'][$i]['id'];?>" target="_blank">更多"<?php echo $data['article_category']['subcategory'][$i]['name'];?>"相关内容...</a></div>
+		<div class="more"><a href="/frontend/index/list/id/<?php echo $data['article_category']['subcategory'][$i]['id'];?>" target="_blank">更多"<?php echo $data['article_category']['subcategory'][$i]['name'];?>"相关内容...</a></div>
     </div>
     <?php
     }
