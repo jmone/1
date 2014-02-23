@@ -132,12 +132,12 @@ height:auto; border:1px solid #e2e2e2; padding:18px; overflow:hidden; margin-bot
 .link{ line-height:50px; padding:0 10px;}
 .link a{ line-height:33px; padding:0 5px; text-align:center;}
 /**bottom**/
-.bottom{ height:88px; border-top:1px solid #a6a6a6;}
+.bottom{ height:68px; border-top:1px solid #a6a6a6;}
 .bottom p{position:absolute; color:#333;}
-.yw{ width:660px; line-height:25px;color:#333; left:10px; top:22px;}
-.info{width:660px; line-height:25px;color:#333;left:10px; top:47px;}
-.copyright_id{line-height:25px;color:#333; top:22px; right:10px;}
-.copyright_info{line-height:25px;color:#333;  top:47px; right:10px;}
+.yw{ width:660px; line-height:25px;color:#333; left:10px; top:10px; display:none;}
+.info{width:660px; line-height:25px;color:#333;left:10px; top:30px;}
+.copyright_id{line-height:25px;color:#333; top:10px; right:10px;}
+.copyright_info{line-height:25px;color:#333;  top:30px; right:10px;}
 /**public_left**/
 .public_left{ float:left; width:202px; background:#f2f2f2; overflow:hidden;  padding:20px 0 20px 13px;}
 .public_left ul{}

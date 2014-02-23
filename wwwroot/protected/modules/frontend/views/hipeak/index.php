@@ -25,9 +25,17 @@
   <body>
     <div class="cbox" style=" margin-top:7px;">
       <div class="top">
-        <!--a href="#" title="江西省探索户外运动发展有限公司" class="top_banner">
-          <img src="./images/banner.jpg" alt="江西省探索户外运动发展有限公司">
-        </a-->
+        <?php
+                $count = min(count($data['position_data'][8]), 1);
+                for($i=0; $i<$count; $i++){
+        ?>
+        <a href="<?php echo $data['position_data'][8][$i]['url'];?>" title="<?php echo $data['position_data'][8][$i]['title'];?>" class="top_banner">
+          <img src="<?php echo $data['position_data'][8][$i]['thumbnail'];?>" alt="<?php echo $data['position_data'][8][$i]['description'];?>" />
+        </a>
+                <?php
+                }
+                ?>
+
         <a href="#" class="logo" title="江西省探索户外运动发展有限公司">
           <img src="./images/logo-01.png" alt="江西省探索户外运动发展有限公司">
         </a>
